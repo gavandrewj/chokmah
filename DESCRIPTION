@@ -18,3 +18,5 @@ Imports:
     purrr,
     stringr,
     tidyr
+URL: https://github.com/gavandrewj/chokmah
+BugReports: https://github.com/gavandrewj/chokmah/issues

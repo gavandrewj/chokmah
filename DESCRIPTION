@@ -12,9 +12,12 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     dplyr,
+    flextable,
     ggdist,
     ggplot2,
     ggpubr,
+    gt,
+    gtsummary,
     purrr,
     sjlabelled,
     strex,

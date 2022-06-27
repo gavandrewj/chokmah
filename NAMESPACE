@@ -3,4 +3,6 @@
 export(clean_continuous)
 export(clean_discrete)
 export(clean_histogram)
+export(cross_table)
 export(rain_plot)
+export(summary_tab)

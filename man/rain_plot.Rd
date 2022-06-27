@@ -59,3 +59,6 @@ a rain plot
 \description{
 Rain Plot
 }
+\examples{
+rain_plot(dataset = data.frame(yvar = rnorm(100)),varname = "yvar")
+}

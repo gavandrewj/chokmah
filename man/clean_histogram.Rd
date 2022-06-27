@@ -10,8 +10,11 @@ clean_histogram(var)
 \item{var}{a continuous variable that you want to check the distribution of.}
 }
 \value{
-A histogram plot or a list of values
+Returns how many missing, not appliable values along with what values stop the conversion to numeric. If the variable is able to be converted to a continuous form then returns a histogram plot as well.
 }
 \description{
 Cleaned Histogram
+}
+\examples{
+clean_histogram(c(rnorm(500),NA,"Not Applicable")
 }

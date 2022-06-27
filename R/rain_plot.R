@@ -20,6 +20,7 @@
 #' @export
 #'
 #' @examples
+#' rain_plot(dataset = data.frame(yvar = rnorm(100)),varname = "yvar")
 rain_plot = function(
     dataset,
     varname,
@@ -134,7 +135,7 @@ rain_plot = function(
 
   # switch the x and y axis
   if(flip){
-    plot = plot + ggplot2::coord_flip()
+    plot = suppressMessages(plot + ggplot2::coord_flip())
   }
 
 

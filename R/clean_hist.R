@@ -16,6 +16,7 @@ clean_histogram = function(var){
 
   # how many not appliable are there
   length_notapp = length(not_app)
+  percent_notapp = round(length_notapp/length(var) * 100,2)
 
 
   # how many missing values are there
@@ -53,7 +54,7 @@ clean_histogram = function(var){
 
     message(paste0("There are ",num_missing," (",percent_missing,")% missing values",sep = " "))
 
-    message(paste0("There are ",length_notapp," not appliable values",sep = " "))
+    message(paste0("There are ",length_notapp," (",percent_notapp,")% not applicable values",sep = " "))
 
     return(p)
 
@@ -67,7 +68,7 @@ clean_histogram = function(var){
 
     message(paste0("There are ",num_missing," (",percent_missing,")% missing values",sep = " "))
 
-    message(paste0("There are ",length_notapp," not appliable values",sep = " "))
+    message(paste0("There are ",length_notapp," (",percent_notapp,")% not applicable values",sep = " "))
 
     message("The following prevents a conversion to a continuous variable:")
 

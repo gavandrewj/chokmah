@@ -16,5 +16,7 @@ Imports:
     ggplot2,
     ggpubr,
     purrr,
+    sjlabelled,
+    strex,
     stringr,
     tidyr

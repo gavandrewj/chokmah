@@ -20,7 +20,7 @@ clean_histogram = function(var){
 
   # how many missing values are there
   num_missing = sum(is.na(var))
-
+  percent_missing = round(num_missing/length(var) * 100,2)
 
   var[not_app] = NA #replace all not applicable with NA
 
@@ -51,7 +51,7 @@ clean_histogram = function(var){
       )
 
 
-    message(paste0("There are ",num_missing," missing values",sep = " "))
+    message(paste0("There are ",num_missing," (",percent_missing,")% missing values",sep = " "))
 
     message(paste0("There are ",length_notapp," not appliable values",sep = " "))
 
@@ -65,7 +65,7 @@ clean_histogram = function(var){
       na.omit() |>
       as.character()
 
-    message(paste0("There are ",num_missing," missing values",sep = " "))
+    message(paste0("There are ",num_missing," (",percent_missing,")% missing values",sep = " "))
 
     message(paste0("There are ",length_notapp," not appliable values",sep = " "))
 

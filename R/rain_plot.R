@@ -27,8 +27,8 @@ rain_plot = function(
     groupvar = NULL,
     facetvar = NULL,
     title = '',
-    y_label = '',
-    x_label = '',
+    y_label = NULL,
+    x_label = NULL,
     leg.title = '',
     flip = T,
     notes = '',
@@ -40,8 +40,14 @@ rain_plot = function(
 
 ){
 
+  if(purrr::is_empty(y_label)){
+y_label = sjlabelled::get_label(dataset[[varname]])
+}
 
 
+  if(purrr::is_empty(x_label)){
+    x_label = sjlabelled::get_label(dataset[[groupvar]])
+  }
 
 
   # filter to get the data you need
@@ -151,8 +157,8 @@ rain_plot = function(
   plot = plot +
     ggpubr::theme_pubr() +
     ggplot2::labs(
-      y = stringr::str_to_title(y_label),
-      x = stringr::str_to_title(x_label),
+      y = y_label,
+      x = x_label,
       title = title,
       caption = stringr::str_wrap(notes,wrap_count)
     ) +

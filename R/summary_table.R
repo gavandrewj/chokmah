@@ -126,14 +126,13 @@ summary_tab = function(
 
 
           type = list(
-            gtsummary::all_continuous() ~ 'continuous2'
+            gtsummary::all_continuous() ~ 'continuous2',
+            sumvar ~ sumvar_type
           ),
           statistic = list(
             gtsummary::all_continuous2() ~ c(
-              "{median}",
-              "{p25}, {p75}",
-              "{mean}",
-              "{sd}",
+              "{median} ({p25}, {p75})",
+              "{mean} ({sd})",
               "{min}, {max}"
               )
 
@@ -182,10 +181,8 @@ summary_tab = function(
           ),
           statistic = list(
             gtsummary::all_continuous2() ~ c(
-              "{median}",
-              "{p25}, {p75}",
-              "{mean}",
-              "{sd}",
+              "{median} ({p25}, {p75})",
+              "{mean} ({sd})",
               "{min}, {max}"
               )
 
@@ -234,14 +231,12 @@ summary_tab = function(
 
               type = list(
                 gtsummary::all_continuous() ~ 'continuous2',
-                sumvar ~ 'continuous2'
+                sumvar ~ sumvar_type
               ),
               statistic = list(
                 gtsummary::all_continuous2() ~ c(
-                  "{median}",
-                  "{p25}, {p75}",
-                  "{mean}",
-                  "{sd}",
+                  "{median} ({p25}, {p75})",
+                  "{mean} ({sd})",
                   "{min}, {max}"
                   )
 

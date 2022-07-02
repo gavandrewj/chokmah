@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-welch_result_table = function(
+welch_ttest_table = function(
     dataset,
     yvar,
     groupvar,
@@ -27,6 +27,10 @@ welch_result_table = function(
   if(load_tab == F){
 
     welch_tab =  dataset |>
+      dplyr::select(
+        yvar,
+        groupvar
+      ) |>
       gtsummary::tbl_summary(
         by = groupvar,
         type = list(yvar ~"continuous2"),

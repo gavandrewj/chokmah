@@ -43,7 +43,7 @@ welch_anova_tab =
       gtsummary::tbl_summary(
         by = groupvar,
         missing = "no",
-        type = y ~ "continuous2",
+        type = yvar ~ "continuous2",
         statistic = yvar ~ c("{mean} ({sd})", "{median} ({p25}, {p75})")
         ) |>
 

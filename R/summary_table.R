@@ -54,7 +54,7 @@ summary_tab = function(
       dataset_filter = dataset |>
         dplyr::select(sumvar,groupvar) |>
         dplyr::filter(
-          .data[[sumvar]] != 'Not Applicable')
+          .data[[sumvar]] != 'Not Applicable' | is.na(.data[[sumvar]]))
 
       sjlabelled::set_label(dataset_filter[[sumvar]]) = row_label
 
@@ -120,7 +120,14 @@ summary_tab = function(
 
 
       sum_tab =  dataset_filter |>
-        dplyr::select(.data[[sumvar]]) |>
+        dplyr::select(.data[[sumvar]])
+
+      if(sumvar_type == 'categorical'){
+
+        sum_tab[[sumvar]] = sum_tab[[sumvar]] |> forcats::fct_explicit_na(na_level = "Unknown") |>  sjlabelled::set_label(row_label)
+      }
+
+      sum_tab = sum_tab |>
         gtsummary::tbl_summary(
           missing = "no",
 
@@ -133,7 +140,8 @@ summary_tab = function(
             gtsummary::all_continuous2() ~ c(
               "{median} ({p25}, {p75})",
               "{mean} ({sd})",
-              "{min}, {max}"
+              "{min}, {max}",
+              "{N_miss} ({p_miss}%)"
               )
 
 

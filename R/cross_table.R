@@ -93,6 +93,7 @@ cross_table = function(
           percent = 'row',
           missing = 'no'
         ) |>
+        gtsummary::modify_header(label = paste0("**","","**")) |>
 
         gtsummary::modify_caption(
           caption = caption

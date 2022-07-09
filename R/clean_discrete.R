@@ -12,8 +12,10 @@ clean_discrete = function(var){
 
   # change the variable to lower case to check for not applicable
   var_label = sjlabelled::get_label(var)
-  var = tolower(var)
-  not_app =   which(var == 'not applicable')
+  var_vallabels = sjlabelled::get_labels(var)
+
+  # var = tolower(var)
+  not_app =   which(tolower(var) == 'not applicable')
 
   # how many not appliable are there
   length_notapp = length(not_app)
@@ -53,7 +55,15 @@ clean_discrete = function(var){
 
   message(paste0("There are ",length_notapp," (",percent_notapp,")% not applicable values",sep = " "))
 
+  message(paste0("Variable label: ",var_label,sep = " "))
+
+
   return(
-    p
+    list(
+      p,
+      table(var),
+      var_vallabels
+      )
+
   )
 }

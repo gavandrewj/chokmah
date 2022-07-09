@@ -51,12 +51,12 @@ summary_tab = function(
       row_label = sjlabelled::get_label(dataset[[sumvar]])
 
 
-      dataset_filter = dataset |>
-        dplyr::select(sumvar,groupvar) |>
-        dplyr::filter(
-          .data[[sumvar]] != 'Not Applicable' | is.na(.data[[sumvar]]))
+      # dataset_filter = dataset |>
+      #   dplyr::select(sumvar,groupvar) |>
+      #   dplyr::filter(
+      #     .data[[sumvar]] != 'Not Applicable' | is.na(.data[[sumvar]]))
 
-      sjlabelled::set_label(dataset_filter[[sumvar]]) = row_label
+      # sjlabelled::set_label(dataset_filter[[sumvar]]) = row_label
 
 
 
@@ -66,19 +66,19 @@ summary_tab = function(
       col_label = sjlabelled::get_label(dataset[[groupvar]])
 
 
-      dataset_filter = dataset |>
-        dplyr::select(sumvar,groupvar) |>
-        dplyr::filter(.data[[sumvar]] != 'Not Applicable',
-                      .data[[groupvar]] != 'Not Applicable') |>
-        dplyr::mutate(
-          dplyr::across(
-            .cols = c(groupvar),
-            .fns = factor
-          )
-        )
+      # dataset_filter = dataset |>
+      #   dplyr::select(sumvar,groupvar) |>
+      #   dplyr::filter(.data[[sumvar]] != 'Not Applicable',
+      #                 .data[[groupvar]] != 'Not Applicable') |>
+      #   dplyr::mutate(
+      #     dplyr::across(
+      #       .cols = c(groupvar),
+      #       .fns = factor
+      #     )
+      #   )
 
-      sjlabelled::set_label(dataset_filter[[sumvar]]) = row_label
-      sjlabelled::set_label(dataset_filter[[groupvar]]) = col_label
+      # sjlabelled::set_label(dataset_filter[[sumvar]]) = row_label
+      # sjlabelled::set_label(dataset_filter[[groupvar]]) = col_label
 
     } else {
 
@@ -87,27 +87,27 @@ summary_tab = function(
       col_label = sjlabelled::get_label(dataset[[groupvar]])
 
 
-      dataset_filter = dataset |>
-        dplyr::select(sumvar,groupvar,stratavar) |>
-        dplyr::filter(.data[[sumvar]] != 'Not Applicable',
-                      .data[[groupvar]] != 'Not Applicable',
-                      .data[[stratavar]] != 'Not Applicable') |>
-        dplyr::mutate(
-          dplyr::across(
-            .cols = c(groupvar,stratavar),
-            .fns = factor
-          )
-        ) |>
-        dplyr::mutate(
-          dplyr::across(
-            .cols = c(sumvar),
-            .fns = as.numeric
-          )
-        )
-
-      sjlabelled::set_label(dataset_filter[[stratavar]]) = strata_label
-      sjlabelled::set_label(dataset_filter[[groupvar]]) = col_label
-      sjlabelled::set_label(dataset_filter[[sumvar]]) = sumvar_label
+      # dataset_filter = dataset |>
+      #   dplyr::select(sumvar,groupvar,stratavar) |>
+      #   dplyr::filter(.data[[sumvar]] != 'Not Applicable',
+      #                 .data[[groupvar]] != 'Not Applicable',
+      #                 .data[[stratavar]] != 'Not Applicable') |>
+      #   dplyr::mutate(
+      #     dplyr::across(
+      #       .cols = c(groupvar,stratavar),
+      #       .fns = factor
+      #     )
+      #   ) |>
+      #   dplyr::mutate(
+      #     dplyr::across(
+      #       .cols = c(sumvar),
+      #       .fns = as.numeric
+      #     )
+      #   )
+      #
+      # sjlabelled::set_label(dataset_filter[[stratavar]]) = strata_label
+      # sjlabelled::set_label(dataset_filter[[groupvar]]) = col_label
+      # sjlabelled::set_label(dataset_filter[[sumvar]]) = sumvar_label
 
     }
 
@@ -119,7 +119,7 @@ summary_tab = function(
 
 
 
-      sum_tab =  dataset_filter |>
+      sum_tab =  dataset |>
         dplyr::select(.data[[sumvar]])
 
       if(sumvar_type == 'categorical'){
@@ -176,7 +176,7 @@ summary_tab = function(
 
 
 
-      sum_tab =  dataset_filter |>
+      sum_tab =  dataset |>
         dplyr::select(.data[[sumvar]],.data[[groupvar]] ) |>
         gtsummary::tbl_summary(
           by = .data[[groupvar]],
@@ -225,7 +225,7 @@ summary_tab = function(
     } else {
 
 
-      sum_tab =  dataset_filter |>
+      sum_tab =  dataset |>
         dplyr::select(.data[[sumvar]], .data[[stratavar]],.data[[groupvar]] ) |>
         gtsummary::tbl_strata(
           strata = .data[[stratavar]],

@@ -56,6 +56,8 @@ clean_continuous = function(var){
 
     message(paste0("There are ",length_notapp," (",percent_notapp,")% not applicable values",sep = " "))
 
+    message(paste0("Variable label: ",var_label,sep = " "))
+
     return(p)
 
 

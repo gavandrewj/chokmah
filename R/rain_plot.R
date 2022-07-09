@@ -45,9 +45,9 @@ y_label = sjlabelled::get_label(dataset[[varname]])
 }
 
 
-  if(purrr::is_empty(x_label)){
-    x_label = sjlabelled::get_label(dataset[[groupvar]])
-  }
+  # if(purrr::is_empty(x_label)){
+  #   x_label = sjlabelled::get_label(dataset[[groupvar]])
+  # }
 
 
   # filter to get the data you need

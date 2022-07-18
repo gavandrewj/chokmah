@@ -16,7 +16,9 @@ summary_tab(
   notes = "",
   digits = 1,
   sumvar_type = "continuous2",
-  file_path
+  file_path,
+  sort = NULL,
+  percent = "column"
 )
 }
 \arguments{
@@ -35,6 +37,8 @@ summary_tab(
 \item{sumvar_type}{continuous2 or categorical}
 
 \item{file_path}{provide the location to store the table}
+
+\item{sort}{}
 }
 \value{
 currently a table in word format

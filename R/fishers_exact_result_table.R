@@ -33,6 +33,9 @@ fishers_exact_result_table = function(
       )
   }
 
+  source("./R/odds_numerator.R")
+  source("./R/odds_denominator.R")
+  source("./R/compute_odds.R")
 
   # or_fun(trial, "trt", "response")
 

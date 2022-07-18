@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param x
+#' @param weights
+#' @param na.rm
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
 odds_numerator <- function(x, weights=rep(1,length(x)), na.rm = T, ...){
 
   if (any(ina <- is.na(x))) {

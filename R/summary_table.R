@@ -12,6 +12,7 @@
 #' @param digits
 #' @param sumvar_type continuous2 or categorical
 #' @param file_path provide the location to store the table
+#' @param sort
 #'
 #' @return currently a table in word format
 #' @export
@@ -29,7 +30,9 @@ summary_tab = function(
     notes = '',
     digits = 1,
     sumvar_type = 'continuous2',
-    file_path
+    file_path,
+    sort = NULL,
+    percent = 'column'
 ){
 
 
@@ -130,6 +133,8 @@ summary_tab = function(
       sum_tab = sum_tab |>
         gtsummary::tbl_summary(
           missing = "no",
+          sort = sort,
+          percent = percent,
 
 
           type = list(
@@ -139,9 +144,7 @@ summary_tab = function(
           statistic = list(
             gtsummary::all_continuous2() ~ c(
               "{median} ({p25}, {p75})",
-              "{mean} ({sd})",
-              "{min}, {max}",
-              "{N_miss} ({p_miss}%)"
+              "{min}, {max}"
               )
 
 
@@ -181,6 +184,7 @@ summary_tab = function(
         gtsummary::tbl_summary(
           by = .data[[groupvar]],
           missing = "no",
+          percent = percent,
 
 
           type = list(
@@ -190,7 +194,6 @@ summary_tab = function(
           statistic = list(
             gtsummary::all_continuous2() ~ c(
               "{median} ({p25}, {p75})",
-              "{mean} ({sd})",
               "{min}, {max}"
               )
 
@@ -244,7 +247,6 @@ summary_tab = function(
               statistic = list(
                 gtsummary::all_continuous2() ~ c(
                   "{median} ({p25}, {p75})",
-                  "{mean} ({sd})",
                   "{min}, {max}"
                   )
 

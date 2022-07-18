@@ -1,3 +1,14 @@
+#' Title
+#'
+#' @param x
+#' @param weights
+#' @param na.rm
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
 compute_odds <- function(x, weights=rep(1,length(x)), na.rm = T, ...){
 
   if (any(ina <- is.na(x))) {
@@ -16,7 +27,5 @@ compute_odds <- function(x, weights=rep(1,length(x)), na.rm = T, ...){
   odds_denominator = odds_data[which(odds_data$x == 0),'Freq']
 
   odds_numerator/odds_denominator
-
-
 
 }

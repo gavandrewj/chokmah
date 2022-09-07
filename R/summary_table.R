@@ -36,7 +36,7 @@ summary_tab = function(
 ){
 
 
-
+  gtsummary::theme_gtsummary_compact(T,font_size = 12)
   # source('C:/Users/gavin/Documents/GitHub/citadel/scripts/skewness.R')
   # source('C:/Users/gavin/Documents/GitHub/citadel/scripts/kurtosis.R')
 

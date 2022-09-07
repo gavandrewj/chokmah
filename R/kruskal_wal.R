@@ -23,44 +23,45 @@ kruskal_wal = function(
     outcome_vartype = "categorical"
 ){
 
+  gtsummary::theme_gtsummary_compact(T,font_size = 12)
 
   # function to compute the cles
-  eps_fun <- function(data, variable, by, ...) {
-
-    esp_data = data |>
-      dplyr::mutate(
-        dplyr::across(
-          .cols = variable,
-          .fns = as.numeric
-        )
-      )
-
-    effectsize::rank_epsilon_squared(
-      data = esp_data,
-      x = arsenal::formulize(x = by,y = variable)
-    ) |>
-      dplyr::as_tibble() |>
-      dplyr::select(
-        rank_epsilon_squared,CI_low,CI_high
-      ) |>
-      dplyr::mutate(
-        dplyr::across(
-          .cols =  dplyr::everything(),
-          .fns = ~gtsummary::style_number(.x,digits = 2)
-        )
-      ) |>
-      dplyr::mutate(
-        ci = paste0(CI_low,',',CI_high)
-      ) |>
-      dplyr::select(
-        rank_epsilon_squared,ci
-      ) |>
-      dplyr::rename(
-        Epsilon = rank_epsilon_squared,
-        "95% CI" = ci
-      )
-
-  }
+  # eps_fun <- function(data, variable, by, ...) {
+  #
+  #   esp_data = data |>
+  #     dplyr::mutate(
+  #       dplyr::across(
+  #         .cols = variable,
+  #         .fns = as.numeric
+  #       )
+  #     )
+  #
+  #   effectsize::rank_epsilon_squared(
+  #     data = esp_data,
+  #     x = arsenal::formulize(x = by,y = variable)
+  #   ) |>
+  #     dplyr::as_tibble() |>
+  #     dplyr::select(
+  #       rank_epsilon_squared,CI_low,CI_high
+  #     ) |>
+  #     dplyr::mutate(
+  #       dplyr::across(
+  #         .cols =  dplyr::everything(),
+  #         .fns = ~gtsummary::style_number(.x,digits = 2)
+  #       )
+  #     ) |>
+  #     dplyr::mutate(
+  #       ci = paste0(CI_low,',',CI_high)
+  #     ) |>
+  #     dplyr::select(
+  #       rank_epsilon_squared,ci
+  #     ) |>
+  #     dplyr::rename(
+  #       Epsilon = rank_epsilon_squared,
+  #       "95% CI" = ci
+  #     )
+  #
+  # }
 
 
 
@@ -83,9 +84,9 @@ kruskal_wal = function(
       gtsummary::tbl_summary(
         by = groupvar
       ) |>
-      gtsummary::add_stat(
-        yvar ~ eps_fun
-      ) |>
+      # gtsummary::add_stat(
+      #   yvar ~ eps_fun
+      # ) |>
       gtsummary::add_p(
         test = yvar ~ kruskal.test
       ) |>
@@ -140,9 +141,9 @@ kruskal_wal = function(
 
           )
         ) |>
-        gtsummary::add_stat(
-          yvar ~ eps_fun
-        ) |>
+        # gtsummary::add_stat(
+        #   yvar ~ eps_fun
+        # ) |>
         gtsummary::add_p(
           test = yvar ~ kruskal.test
         ) |>

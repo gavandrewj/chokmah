@@ -22,7 +22,7 @@ welch_ttest_table = function(
     file_path
 ){
 
-
+  gtsummary::theme_gtsummary_compact(T,font_size = 12)
 
   if(load_tab == F){
 

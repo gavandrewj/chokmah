@@ -23,6 +23,7 @@ wilcox_rank = function(
     outcome_vartype = "categorical"
 ){
 
+  gtsummary::theme_gtsummary_compact(T,font_size = 12)
 
   # function to compute the cles
   cles_fun <- function(data, variable, by, ...) {
@@ -37,7 +38,8 @@ wilcox_rank = function(
 
     effectsize::cles(
       data = cs_data,
-      x = arsenal::formulize(x = by,y = variable)
+      x = arsenal::formulize(x = by,y = variable),
+      parametric = F
     ) |>
       dplyr::as_tibble() |>
       dplyr::filter(Parameter == "Pr(superiority)") |>
@@ -59,6 +61,9 @@ wilcox_rank = function(
       dplyr::rename(
         CLES = Coefficient,
         "95% CI" = ci
+      ) |>
+      dplyr::select(
+        CLES
       )
 
   }
@@ -101,21 +106,21 @@ wilcox_rank = function(
         part = "head"
       ) |>
       flextable::footnote(
-        i = 1,j = c(4,5),
+        i = 1,j = c(4),
         value = flextable::as_paragraph(c("Common Language Effect Size")),
         ref_symbols = c("2"),
         part = "head"
       ) |>
+      # flextable::footnote(
+      #   i = 1,j = c(5),
+      #   value = flextable::as_paragraph(c("Confidence Interval")),
+      #   ref_symbols = c("3"),
+      #   part = "head"
+      # ) |>
       flextable::footnote(
         i = 1,j = c(5),
-        value = flextable::as_paragraph(c("Confidence Interval")),
-        ref_symbols = c("3"),
-        part = "head"
-      ) |>
-      flextable::footnote(
-        i = 1,j = c(6),
         value = flextable::as_paragraph(c("Wilcoxon Rank Sum Test")),
-        ref_symbols = c("4"),
+        ref_symbols = c("3"),
         part = "head"
       )
     } else if(outcome_vartype == "continuous"){
@@ -148,7 +153,7 @@ wilcox_rank = function(
         gtsummary::modify_header(label = "") |>
         gtsummary::modify_footnote(everything() ~ NA) |>
         gtsummary::modify_caption(caption) |>
-        gtsummary::as_flex_table() |>
+        gtsummary::as_flex_table()|>
         flextable::footnote(
           i = 1,j = c(2,3),
           value = flextable::as_paragraph(c("n (%)")),
@@ -156,21 +161,21 @@ wilcox_rank = function(
           part = "head"
         ) |>
         flextable::footnote(
-          i = 1,j = c(4,5),
+          i = 1,j = c(4),
           value = flextable::as_paragraph(c("Common Language Effect Size")),
           ref_symbols = c("2"),
           part = "head"
         ) |>
+        # flextable::footnote(
+        #   i = 1,j = c(5),
+        #   value = flextable::as_paragraph(c("Confidence Interval")),
+        #   ref_symbols = c("3"),
+        #   part = "head"
+        # ) |>
         flextable::footnote(
           i = 1,j = c(5),
-          value = flextable::as_paragraph(c("Confidence Interval")),
-          ref_symbols = c("3"),
-          part = "head"
-        ) |>
-        flextable::footnote(
-          i = 1,j = c(6),
           value = flextable::as_paragraph(c("Wilcoxon Rank Sum Test")),
-          ref_symbols = c("4"),
+          ref_symbols = c("3"),
           part = "head"
         )
 

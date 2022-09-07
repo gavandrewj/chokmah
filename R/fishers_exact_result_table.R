@@ -22,6 +22,7 @@ fishers_exact_result_table = function(
     caption = ""
     ){
 
+  gtsummary::theme_gtsummary_compact(T,font_size = 12)
 
   # function to compute fishers exact table
   or_fun <- function(data, variable, by, ...) {

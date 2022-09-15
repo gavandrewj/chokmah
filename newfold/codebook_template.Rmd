@@ -1,0 +1,324 @@
+---
+output:
+  pdf_document:
+    extra_dependencies: 
+      array: NULL
+      caption: NULL
+      graphicx: NULL
+      siunitx: NULL
+      colortbl : NULL
+      multirow: NULL
+      hhline: NULL
+      calc: NULL
+      threeparttable: NULL
+      tabularx: NULL
+      wrapfig: NULL
+      hyperref: NULL
+      placeins: NULL
+    keep_tex: true
+geometry: margin=1cm
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,warning = F,message = F)
+```
+
+```{=latex}
+
+\definecolor{mypink1}{RGB}{202, 200, 72}
+\setlength{\footskip}{-1pt}
+\definecolor{titlecolor}{RGB}{86,193,166}
+\colorlet{shadecolor}{gray!40}
+
+```
+
+```{=latex}
+
+\newgeometry{left=2.5cm, right=2cm,bottom = 3cm}
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+
+
+	
+	%------------------------------------------------
+	%	Grey title box
+	%------------------------------------------------
+	
+	\colorbox{titlecolor}{
+		\parbox[t]{0.93\textwidth}{ % Outer full width box
+			\parbox[t]{0.91\textwidth}{ % Inner box for inner right text margin
+				\raggedleft % Right align the text
+				\fontsize{50pt}{80pt}\selectfont % Title font size, the first argument is the font size and the second is the line spacing, adjust depending on title length
+				\vspace{0.7cm} % Space between the start of the title and the top of the grey box
+				
+				Study Title\\
+				and\\
+				Information\\
+			 \vspace{4cm}
+			
+				Codebook for dataset\\
+				
+				\vspace{0.7cm} % Space between the end of the title and the bottom of the grey box
+			}
+		}
+	}
+	
+	\vfill % Space between the title box and author information
+	
+	%------------------------------------------------
+	%	Author name and information
+	%------------------------------------------------
+	
+	\parbox[t]{0.93\textwidth}{ % Box to inset this section slightly
+		\raggedleft % Right align the text
+		\Large % Increase the font size
+		{\Large B.J. Blazkowicz}\\[4pt] % Extra space after name
+		Department Name\\
+		Institution Name\\[4pt] % Extra space before URL
+		\texttt{LaTeXTemplates.com}\\
+		
+		\hfill\rule{0.2\linewidth}{1pt}% Horizontal line, first argument width, second thickness
+	}
+	
+\end{titlepage}
+
+\restoregeometry
+\setlength{\footskip}{-1pt}
+
+```
+
+
+
+
+```{r}
+
+library(codebook)
+library(gtsummary)
+library(sjlabelled)
+library(kableExtra)
+library(gt)
+# library(gtExtras)
+library(huxtable)
+library(readxl)
+
+meta_path = "C:/Users/gavin/Documents/R/chokmah/misc/cleaning_tools/meta_data.xlsx"
+
+
+header_beam = function(varname){
+cat("\\colorbox{mypink1}{\\makebox[\\textwidth]{\\strut\\bfseries\\color{black} ",varname,"}}")
+}
+
+'%!in%' <- function(x,y)!('%in%'(x,y))
+
+options(huxtable.bookdown = T)
+
+```
+
+
+
+```{r}
+meta_data <- read_excel("C:/Users/gavin/Documents/R/chokmah/misc/cleaning_tools/meta_data.xlsx") |>
+  dplyr::select(-starts_with("NA")) |> tibble::as_tibble()
+
+
+meta_data$missing_values = ""
+
+meta_data = meta_data |> tibble::as_tibble()
+
+
+
+```
+
+
+
+
+```{r results='asis'}
+
+page_numbers = c()
+
+for(name in meta_data$var_name){
+  page_numbers = c(paste0("Page ","\\pageref{",name,"} \n"),page_numbers)
+}
+
+toc_code = data.frame(
+  variable_name = meta_data$var_name,
+  variable_label = meta_data$var_label,
+  pages = rev(page_numbers)
+) |>
+  dplyr::rename(
+  "Variable Name"  = variable_name,
+  "Variable Label" = variable_label,
+  "Page Number" = pages
+  ) |> 
+  huxtable() |>
+  set_position("center") |> 
+  theme_grey() |> 
+  to_latex(tabular_only = T) 
+
+
+toc_code = gsub(pattern = '$\\backslash$pageref\\',replacement = '\\pageref',toc_code,fixed = T)
+
+
+
+
+for(name in meta_data$var_name){
+
+tofind = gsub(pattern = "\n",replacement = "",commonmark::markdown_latex(name))
+toc_code = gsub(pattern = paste0(tofind,"\\"),replacement = name,toc_code,fixed = T)
+    
+}
+
+toc_code |> cat()
+
+
+```
+
+
+\newpage
+
+
+
+
+
+```{r}
+
+dataset = sjlabelled::read_spss(
+  "~/GitHub/drRobertson/dataset.sav",
+  atomic.to.fac = F
+  )
+
+reli_codes = c(
+      "Missing" = -99,
+      "No answer" = -2,
+      'Christian' = 1,
+      'Hindu'= 2,
+      "Muslim" = 3,
+      "Other Religious Group" = 4,
+      "Not Religious" = 5
+)
+# 
+#
+dataset$religion = sjlabelled::as_character(dataset$religion)
+dataset$religion[15] = "No answer"
+
+dataset = dataset |>
+  dplyr::mutate(
+    # religion = religion |> sjlabelled::as_character()
+  )  |>
+  dplyr::mutate(
+    religion = ifelse(is.na(religion),"Missing",religion)
+  )  |>
+
+# sjlabelled::write_stata(
+#   dataset,
+#   paste0(getwd(),"/check.dta"),
+#   version = 13
+# )
+# 
+# sjlabelled::write_spss(
+#   dataset,
+#   paste0(getwd(),"/check.sav")
+# )
+
+  dplyr::mutate(
+    religion = dplyr::recode(
+      religion,
+     !!!reli_codes
+    ),
+    religion = sjlabelled::set_label(religion,"Resident's Religion")
+  ) |>
+  dplyr::mutate(
+    religion = sjlabelled::set_labels(
+      religion,
+      labels = reli_codes
+    )
+  )
+
+# table(dataset$religion)
+
+dataset = dataset |> 
+ dplyr::mutate(
+   con_var = rnorm(100)  
+ ) |> 
+  dplyr::mutate(
+    con_var = con_var |> sjlabelled::set_labels(labels =  setNames(con_var,con_var))
+  ) |> 
+  dplyr::relocate(con_var,.before = sex) |> 
+  tidyr::drop_na()
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+# out = gen_codebook(
+#   varname = "religion",
+#   meta_data = meta_data,
+#   dataset = dataset
+# )
+
+
+
+list_to_knit = lapply(
+  meta_data$var_name,
+  FUN = chokmah::gen_codebook,
+  meta_data = meta_data,
+  dataset = dataset
+)
+
+
+
+```
+
+
+
+```{r, include=FALSE}
+knit_expanded2 <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+out2 = c(knit_expanded2)
+
+knit_expanded2 <- paste0("\n```{r results='asis'}\n\nheader_beam('v1')\n\n```")
+out2 = c(out2,knit_expanded2)
+
+knit_expanded2 <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+out2 = c(out2,knit_expanded2)
+
+knit_expanded2 <- paste0("\n```{r results='asis'}\n\nheader_beam('sex')\n\n```")
+out2 = c(out2,knit_expanded2)
+
+knit_expanded2 <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+out2 = c(out2,knit_expanded2)
+
+```
+
+
+```{r}
+# list_to_knit = list(
+#   out,
+#   out2
+# )
+```
+
+```{r}
+knit_function = function(knit_object){
+  paste(knitr::knit(text = knit_object), collapse = '\n')
+}
+
+options(knitr.duplicate.label = "allow")
+
+# `r lapply(list_to_knit,knit_function)`
+```
+
+
+`r unlist(lapply(list_to_knit,knit_function))`

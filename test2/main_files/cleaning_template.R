@@ -3,9 +3,8 @@
 
 ############################# paths ############################################
 
-# set the working directory
-setwd(paste0(getwd(),"/"))
-meta_file = "meta_files/meta_data.xlsx"
+cleaning_folder = paste0(getwd(),"/data_cleaning/")
+meta_path = "data_cleaning/meta_data.xlsx"
 
 
 ########################### libraries and helper functions ####################
@@ -18,7 +17,6 @@ library(janitor)
 library(chokmah)
 library(readr)
 library(naniar)
-library(googledrive)
 
 ############################ Create all value labels ###########################
 # named vectors
@@ -40,7 +38,7 @@ library(googledrive)
 
 
 
-########################### Clean up names; Create meta data #####################
+########################### Create meta data; add variable names #####################
 # perform this inside the script if feasible
 
 
@@ -55,11 +53,11 @@ library(googledrive)
 # create the meta data file
 meta_data = data.frame(
   var_name = names(dataset),
+  var_label = ,
   brief_desc = NA,
   var_type = NA,
   interval_type = NA,
-  possible_invalid_codes = NA,
-  var_special = NA,
+  possible_invalid_codes =
   invalid_codes = NA,
   new_page = NA,
   table_break = NA
@@ -85,12 +83,12 @@ to_write = paste0("meta_data[meta_data$var_name == '",meta_data$var_name,"','var
 
 write(
   to_write,
-  file = "meta_files/gen_varlabels.R",
+  file = paste0(getwd(),"/gen_varlabels.R"),
   append = F
 )
 
 source(
-  "meta_files/gen_varlabels.R"
+  paste0(getwd(),"/gen_varlabels.R"),
 )
 
 
@@ -111,12 +109,12 @@ to_write = paste0("meta_data[meta_data$var_name == '",meta_data$var_name,"','bri
 
 write(
   to_write,
-  file = "meta_files/gen_brief_desc.R",
+  file = paste0(getwd(),"/gen_brief_desc.R"),
   append = F
 )
 
 source(
-  "meta_files/gen_brief_desc.R"
+  paste0(getwd(),"/gen_brief_desc.R"),
 )
 
 
@@ -145,12 +143,12 @@ to_write = paste0("meta_data[meta_data$var_name == '",meta_data$var_name,"','pos
 
 write(
   to_write,
-  file = "meta_files/gen_possible_invalid_codes.R",
+  file = paste0(getwd(),"/gen_possible_invalid_codes.R"),
   append = F
 )
 
 source(
-  "meta_files/gen_possible_invalid_codes.R"
+  paste0(getwd(),"/gen_possible_invalid_codes.R"),
 )
 
 
@@ -173,12 +171,12 @@ to_write = paste0("meta_data[meta_data$var_name == '",meta_data$var_name,"','new
 
 write(
   to_write,
-  file = "meta_files/gen_new_page.R",
+  file = paste0(getwd(),"/gen_new_page.R"),
   append = F
 )
 
 source(
-  "meta_files/gen_new_page.R"
+  paste0(getwd(),"/gen_new_page.R"),
 )
 
 
@@ -199,33 +197,15 @@ to_write = paste0("meta_data[meta_data$var_name == '",meta_data$var_name,"','tab
 
 write(
   to_write,
-  file = "meta_files/gen_table_break.R",
+  file = paste0(getwd(),"/gen_table_break.R"),
   append = F
 )
 
 source(
-  "meta_files/gen_table_break.R",
+  paste0(getwd(),"/gen_table_break.R"),
 )
 
 
-
-########################## create the brief label file
-# create this file which has specific entry code instead of relying on the external files
-# make sure to comment out write statements
-# leave only the source file to run and make the changes to the meta file that should
-
-
-to_write = paste0("meta_data[meta_data$var_name == '",meta_data$var_name,"','var_special'] = '",stringr::str_trim(meta_data$var_special),"'")
-
-write(
-  to_write,
-  file = "meta_files/gen_var_special.R",
-  append = F
-)
-
-source(
-  "meta_files/gen_var_special.R"
-)
 
 
 
@@ -275,8 +255,7 @@ missing_data = missing_data |> janitor::remove_empty(which = 'cols')
 # write the file and send to client
 write_csv(
   missing_data,
-  file = "missing_files/missing_data.csv"
-  )
+  file = paste0(getwd(),))
 
 
 
@@ -303,7 +282,7 @@ for(name in char_vars){
 factor_vars = c()
 
 for(name in factor_vars){
-  meta_data[meta_data$var_name == name,"var_type"] = "numeric"
+  meta_data[meta_data$var_name == name,"var_type"] = "factor"
   meta_data[meta_data$var_name == name,"interval_type"] = "discrete"
 
 }
@@ -335,7 +314,7 @@ for(name in date_vars){
 gps_vars = c()
 
 for(name in gps_vars){
-  meta_data[meta_data$var_name == name,"var_type"] = "numeric"
+  meta_data[meta_data$var_name == name,"var_type"] = "GPS"
   meta_data[meta_data$var_name == name,"interval_type"] = "continuous"
 
 }
@@ -343,9 +322,16 @@ for(name in gps_vars){
 
 
 
+
+
+
+########################### Create variable interval types ##############################
+
+
+
+
 ########################################## Global Replacements #################
-# only replacements which you are certain of
-# care with missing values
+
 
 
 
@@ -356,39 +342,31 @@ for(name in gps_vars){
 
 
 
-
-
-
-
-
-
-################################### filter the dataset & meta data file as needed #####
-
-
-
-######################################## Write to other formats #######################
-
 # SPSS
-sjlabelled::write_spss(dataset,path = "cleaned_datafiles/clean_data.sav")
+sjlabelled::write_spss(dataset,path = )
 
 # STATA
-sjlabelled::write_stata(dataset,path = "cleaned_datafiles/clean_data.dta",
-                        version = 13)
+sjlabelled::write_stata(dataset,path = )
 
 
 
 ########################### Write to R format ##################################
 
 
+# convert all factor variables to factors
+dataset = dataset |>
+  mutate(
+    across(
+      .cols = factor_vars,
+      .fns = sjlabelled::as_label
+    )
+  )
+
+########################### Write to dataset folder ############################
+
+clean_data = dataset
+
 saveRDS(
   dataset,
-  file = "cleaned_datafiles/clean_data.rds"
-)
-
-
-############################## Write the meta data files #######################
-
-xlsx::write.xlsx(
-  meta_data,
-  file = "meta_files/meta_data.xlsx"
+  file =
 )

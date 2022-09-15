@@ -4,10 +4,10 @@
 \alias{create_cleaning_template}
 \title{Title}
 \usage{
-create_cleaning_template(path)
+create_cleaning_template(path, folder_name, overwrite = F)
 }
 \arguments{
-\item{path}{}
+\item{overwrite}{}
 }
 \value{
 

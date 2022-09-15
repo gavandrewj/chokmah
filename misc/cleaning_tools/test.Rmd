@@ -1,0 +1,198 @@
+---
+output:
+  bookdown::pdf_document2:
+    extra_dependencies: 
+      array: NULL
+      caption: NULL
+      graphicx: NULL
+      siunitx: NULL
+      colortbl : NULL
+      multirow: NULL
+      hhline: NULL
+      calc: NULL
+      threeparttable: NULL
+      tabularx: NULL
+      wrapfig: NULL
+      hyperref: NULL
+      placeins: NULL
+    keep_tex: true
+    includes:
+      in_header: columns.tex
+  beamer_presentation: 
+    keep_tex: true
+  word_document: default
+geometry: margin=1cm
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,warning = F,message = F)
+```
+
+\newpage
+
+ Page \pageref{variable_name} 
+\newpage
+Some text
+\newpage
+
+\newpage
+\label{label} target caption
+
+
+
+```{r}
+
+library(codebook)
+library(gtsummary)
+library(sjlabelled)
+library(kableExtra)
+library(gt)
+# library(gtExtras)
+library(huxtable)
+library(readxl)
+
+meta_path = "C:/Users/gavin/Documents/R/chokmah/misc/cleaning_tools/meta_data.xlsx"
+
+
+header_beam = function(varname){
+cat("\\colorbox{mypink1}{\\makebox[\\textwidth]{\\strut\\bfseries\\color{black} ",varname,"}}")
+}
+
+'%!in%' <- function(x,y)!('%in%'(x,y))
+
+options(huxtable.bookdown = T)
+
+```
+
+
+
+```{r results='asis', eval=FALSE}
+
+thing = data.frame(
+  y = rnorm(5)
+) 
+
+thing |> gt()
+
+huxtable(thing) |> theme_grey() |> huxtable::set_width(1.05) |>
+                          to_latex(tabular_only = T) |> cat()
+
+```
+
+
+```{r}
+meta_data <- read_excel("C:/Users/gavin/Documents/R/chokmah/misc/cleaning_tools/meta_data.xlsx") |>
+  dplyr::select(-starts_with("NA")) |> tibble::as_tibble()
+
+
+meta_data$missing_values = ""
+
+meta_data = meta_data |> tibble::as_tibble()
+
+```
+
+
+```{r results='asis'}
+
+for(name in meta_data$var_name){
+  paste0("Page ","\\pageref{",name,"} \n") |> cat()
+}
+
+
+```
+
+
+
+Page \@ref{tab:q2}
+
+\colorlet{shadecolor}{gray!40}
+
+
+```{r}
+
+dataset = sjlabelled::read_spss(
+  "~/GitHub/drRobertson/dataset.sav",
+  atomic.to.fac = F
+  )
+
+reli_codes = c(
+      "Missing" = -99,
+      "No answer" = -2,
+      'Christian' = 1,
+      'Hindu'= 2,
+      "Muslim" = 3,
+      "Other Religious Group" = 4,
+      "Not Religious" = 5
+)
+# 
+#
+dataset$religion = sjlabelled::as_character(dataset$religion)
+dataset$religion[15] = "No answer"
+
+dataset = dataset |>
+  dplyr::mutate(
+    # religion = religion |> sjlabelled::as_character()
+  )  |>
+  dplyr::mutate(
+    religion = ifelse(is.na(religion),"Missing",religion)
+  )  |>
+
+# sjlabelled::write_stata(
+#   dataset,
+#   paste0(getwd(),"/check.dta"),
+#   version = 13
+# )
+# 
+# sjlabelled::write_spss(
+#   dataset,
+#   paste0(getwd(),"/check.sav")
+# )
+
+  dplyr::mutate(
+    religion = dplyr::recode(
+      religion,
+     !!!reli_codes
+    ),
+    religion = sjlabelled::set_label(religion,"Resident's Religion")
+  ) |>
+  dplyr::mutate(
+    religion = sjlabelled::set_labels(
+      religion,
+      labels = reli_codes
+    )
+  )
+
+# table(dataset$religion)
+
+dataset = dataset |> 
+ dplyr::mutate(
+   con_var = rnorm(100)  
+ ) |> 
+  dplyr::mutate(
+    con_var = con_var |> sjlabelled::set_labels(labels =  setNames(con_var,con_var))
+  ) |> 
+  dplyr::relocate(con_var,.before = sex) |> 
+  tidyr::drop_na()
+
+
+
+```
+
+```{r results='asis'}
+
+
+tables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = 'is_religious')
+
+value_table = tables$value_table
+
+tab_latex = huxtable(value_table) |> theme_blue() |> set_width(0.96) |>
+  set_col_width(c(0.1,0.5,0.17,0.15)) |> huxtable::map_align(by_cols('center','left', 'right','right')) |>
+  style_header_cols(align = 'center')  |>
+  huxtable::set_label(paste0('tab:is_religious')) |>
+  huxtable::set_caption("dic") |> 
+  to_latex(tabular_only = T) 
+
+gsub(pattern = "\\end{tabularx}",replacement = "\\phantomsection\n\\label{variable_name}\n\\end{tabularx}",tab_latex,fixed = T) |> cat()
+
+```
+

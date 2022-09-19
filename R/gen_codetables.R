@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-gen_codetables = function(dataset,varname,meta_path,special_vartype){
+gen_codetables = function(dataset,varname,meta_path,special_vartype = ""){
 
 
 

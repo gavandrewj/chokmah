@@ -4,7 +4,7 @@
 \alias{gen_codetables}
 \title{Title}
 \usage{
-gen_codetables(dataset, varname, meta_path, special_vartype)
+gen_codetables(dataset, varname, meta_path, special_vartype = "")
 }
 \arguments{
 \item{varname}{}

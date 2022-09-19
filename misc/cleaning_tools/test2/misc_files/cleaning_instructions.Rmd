@@ -12,6 +12,34 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# For questionnaires using an XLS Form
+
+## Phase One 
+
+Create the cleaning meta files and initial formatting and documentation
+
+1.  create the folder for cleaning that one dataset.
+2.  download the dataset into downloads folder, download the xls form
+    into the meta files folder
+3.  use the create value labels and create meta data scripts to curate
+    the meta data
+4.  import and do the initial prep on the data using the cleaning
+    template and store data frame.
+
+## Phase Two 
+
+Select the variables to clean
+
+use the create skeleton script to curate the code
+
+clean those variables
+
+store in cleaned datafiles
+
+## Phase Three
+
+Create the codebook and review
+
 # Meta Data File
 
 Perhaps the most important document.

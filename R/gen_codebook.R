@@ -148,83 +148,45 @@ gen_codebook = function(varname,meta_data,dataset){
 
 
 
-
-  if(is.na(special_vartype) & variable_inttype == "discrete" & sum(is.na(table_break_vals)) == 1){
-    # if(dothing == T){
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
+  if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "numeric" & sum(is.na(table_break_vals)) == 1){
 
 
+    if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "discrete"){
+      # if(dothing == T){
 
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
-    out = c(out,knit_expanded)
+      knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
 
 
 
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
-
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+      out = c(out,knit_expanded)
 
 
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
+
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
 value_table = tables$value_table\n\n
 value_table = huxtable(value_table) |> theme_blue() |> set_width(0.96) |>
                         set_col_width(c(0.1,0.5,0.17,0.15)) |> huxtable::map_align(by_cols('center','left', 'right','right')) |>
 style_header_cols(align = 'center')  |>
 to_latex(tabular_only = T) \n
 gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
-    out = c(out,knit_expanded)
 
+            out = c(out,knit_expanded)
 
-    # knit_expanded <- paste0("\n```{r results='asis'}\n\n
-    #                         paste0('\\\\FloatBarrier \n \\\\label{",variable_name,"} \n \\\\FloatBarrier \n')  |> cat()
-    #                         \n\n```")
-    # out = c(out,knit_expanded)
+            knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
 
-
-
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-    out = c(out,knit_expanded)
-  } else if(is.na(special_vartype) & variable_inttype == "continuous" & sum(is.na(table_break_vals)) == 1){
-    # if(dothing == T){
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
+            out = c(out,knit_expanded)
 
 
 
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
-    out = c(out,knit_expanded)
-
-
-
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
-
-
-
-
-
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> huxtable::set_width(1.1) |>
-                        set_col_width(c(0.5,0.17,0.15)) |>
-                        huxtable::map_align(by_cols('left','center', 'center')) |> style_header_cols(align = 'center') |>  to_latex(tabular_only = T) |> cat()\n\n```")
-
-    out = c(out,knit_expanded)
-
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-    out = c(out,knit_expanded)
-
-
-
-  } else if(is.na(special_vartype) & variable_inttype == "continuous" & sum(is.na(table_break_vals)) != 1){
-
-    for(i in 0:num_table_breaks){
+    } else if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "continuous"){
 
 
       knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
@@ -246,6 +208,91 @@ value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> hux
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
+value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> huxtable::set_width(1.1) |>
+                        set_col_width(c(0.5,0.17,0.15)) |>
+                        huxtable::map_align(by_cols('left','center', 'center')) |> style_header_cols(align = 'center') |>  to_latex(tabular_only = T) |> cat()\n\n```")
+
+      out = c(out,knit_expanded)
+
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      out = c(out,knit_expanded)
+
+
+
+    }
+
+
+
+  } else if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "character" & sum(is.na(table_break_vals)) == 1){
+
+
+    if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "text"){
+      # if(dothing == T){
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
+value_table = tables$value_table\n\n
+value_table = huxtable(value_table) |> theme_blue() |> set_width(0.5) |>
+                        set_col_width(c(0.5,0.25,0.25)) |> huxtable::map_align(by_cols('left','center', 'center')) |>
+style_header_cols(align = 'center')  |>
+to_latex(tabular_only = T) \n
+gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+
+      out = c(out,knit_expanded)
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+
+      out = c(out,knit_expanded)
+
+
+
+    }
+
+
+
+  } else if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "numeric" & sum(is.na(table_break_vals)) != 1){
+
+
+    if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "continuous"){
+
+      for(i in 0:num_table_breaks){
+
+
+        knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+        out = c(out,knit_expanded)
+
+
+
+        knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+        out = c(out,knit_expanded)
+
+
+
+
+        knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+        out = c(out,knit_expanded)
+
+
+
+
+
+        knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
                               value_table = tables$value_table\n
                               all_tables = split(value_table, cumsum(1:nrow(value_table) %in% c(",table_break_vals,")))\n
 
@@ -253,20 +300,64 @@ value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> hux
                         set_col_width(c(0.5,0.17,0.15)) |>
                         huxtable::map_align(by_cols('left','center', 'center')) |> style_header_cols(align = 'center') |>  to_latex(tabular_only = T) |> cat()\n\n```")
 
-      out = c(out,knit_expanded)
+        out = c(out,knit_expanded)
 
 
-      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-      out = c(out,knit_expanded)
+        knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+        out = c(out,knit_expanded)
+
+
+      }
+
+
+    } else if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "discrete"){
+
+
+      for(i in 0:num_table_breaks){
+
+
+        knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+        out = c(out,knit_expanded)
+
+
+
+        knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+        out = c(out,knit_expanded)
+
+
+
+
+        knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+        out = c(out,knit_expanded)
+
+
+
+
+
+        knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
+                              value_table = tables$value_table\n
+                              all_tables = split(value_table, cumsum(1:nrow(value_table) %in% c(",table_break_vals,")))\n
+
+                              \nhuxtable(all_tables[['",i,"']]) |>  theme_blue() |> set_width(0.96) |>
+                        set_col_width(c(0.125,0.3,0.125,0.125,0.3,0.125,0.125,0.125)) |> huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |> style_header_cols(align = 'center') |>  to_latex(tabular_only = T) |> cat()\n\n```")
+
+        out = c(out,knit_expanded)
+
+
+        knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+        out = c(out,knit_expanded)
+
+
+      }
 
 
     }
 
 
-  } else if(is.na(special_vartype) & variable_inttype == "discrete" & sum(is.na(table_break_vals)) != 1){
+  } else if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "character" & sum(is.na(table_break_vals)) != 1){
 
+    if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "date"){
 
-    for(i in 0:num_table_breaks){
 
 
       knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
@@ -285,68 +376,26 @@ value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> hux
 
 
 
-
-
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-                              value_table = tables$value_table\n
-                              all_tables = split(value_table, cumsum(1:nrow(value_table) %in% c(",table_break_vals,")))\n
-
-                              \nhuxtable(all_tables[['",i,"']]) |>  theme_blue() |> set_width(0.96) |>
-                        set_col_width(c(0.125,0.3,0.125,0.125,0.3,0.125,0.125,0.125)) |> huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |> style_header_cols(align = 'center') |>  to_latex(tabular_only = T) |> cat()\n\n```")
-
-      out = c(out,knit_expanded)
-
-
-      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-      out = c(out,knit_expanded)
-
-
-    }
-
-
-  } else if(special_vartype == "date" & variable_inttype == "discrete" & sum(is.na(table_break_vals)) == 1){
-
-
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
-
-
-
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
-    out = c(out,knit_expanded)
-
-
-
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
-
-
-
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
 value_table = tables$value_table\n\n
 value_table = huxtable(value_table) |> theme_blue() |> set_width(0.96) |>
                         set_col_width(expss::prop(0.15,0.7,0.2)) |> huxtable::map_align(by_cols('center','left', 'center')) |>
 style_header_cols(align = 'center')  |>
 to_latex(tabular_only = T) \n
 gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
-    out = c(out,knit_expanded)
-
-
-    # knit_expanded <- paste0("\n```{r results='asis'}\n\n
-    #                         paste0('\\\\FloatBarrier \n \\\\label{",variable_name,"} \n \\\\FloatBarrier \n')  |> cat()
-    #                         \n\n```")
-    # out = c(out,knit_expanded)
+      out = c(out,knit_expanded)
 
 
 
-
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-    out = c(out,knit_expanded)
-
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      out = c(out,knit_expanded)
 
 
+
+
+
+
+    }
 
 
 
@@ -355,103 +404,156 @@ gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label
 
 
 
+
+
+
   # summary stats
 
-  if(is.na(special_vartype) & variable_inttype == "discrete"){
+  if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "numeric"){
+
+    if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "discrete"){
 
 
-  knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
-  out = c(out,knit_expanded)
-
-
-
-  knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
-  out = c(out,knit_expanded)
+      knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
 
 
 
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+      out = c(out,knit_expanded)
 
-  knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
-  out = c(out,knit_expanded)
 
 
-  knit_expanded <- paste0("\n```{r results='asis'}\n\n
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\n
 sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.75) |>
 set_col_width(c(0.125,0.125,0.125,0.125,0.125,0.125,0.125,0.125)) |>
 huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |>
 huxtable::set_left_padding(1, c(2,5), 0 ) |>
 huxtable::set_left_padding(2, 1:8, 10 ) |>
 to_latex(tabular_only = T) |> cat()\n\n```")
-  out = c(out,knit_expanded)
+      out = c(out,knit_expanded)
 
 
 
-  knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-  out = c(out,knit_expanded)
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      out = c(out,knit_expanded)
 
-  } else if(is.na(special_vartype) & variable_inttype == "continuous"){
+    } else if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "continuous"){
 
-    knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
-
-
-
-    knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
-    out = c(out,knit_expanded)
+      knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
 
 
 
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+      out = c(out,knit_expanded)
 
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
-    out = c(out,knit_expanded)
 
 
-    knit_expanded <- paste0("\n```{r results='asis'}\n\n
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\n
 sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.71) |>
 set_col_width(expss::prop(c(0.08,0.09,0.08,0.08,0.125,0.08,0.08,0.08,0.08))) |>
 huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |>
 huxtable::set_left_padding(1, 1:8, 0 ) |>
 huxtable::set_left_padding(2, 1:8, 0 ) |>
 to_latex(tabular_only = T) |> cat()\n\n```")
-    out = c(out,knit_expanded)
+      out = c(out,knit_expanded)
 
 
 
-    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-    out = c(out,knit_expanded)
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      out = c(out,knit_expanded)
 
-} else if(special_vartype == "date" & variable_inttype == "discrete"){
-
-  knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
-  out = c(out,knit_expanded)
-
-
-
-  knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
-  out = c(out,knit_expanded)
+    }
 
 
 
 
-  knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
-  out = c(out,knit_expanded)
+  } else if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "character"){
 
 
-  knit_expanded <- paste0("\n```{r results='asis'}\n\n
+    if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "text"){
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\n
+sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.75) |>
+set_col_width(expss::prop(c(1,1,1))) |>
+huxtable::map_align(by_cols('left','left','left')) |>
+to_latex(tabular_only = T) |> cat()\n\n```")
+
+      out = c(out,knit_expanded)
+
+
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      out = c(out,knit_expanded)
+
+    }
+
+    if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "date"){
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+      out = c(out,knit_expanded)
+
+
+
+
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+      out = c(out,knit_expanded)
+
+
+      knit_expanded <- paste0("\n```{r results='asis'}\n\n
 sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.75) |>
 set_col_width(expss::prop(c(1,1,1,1,1,1))) |>
 huxtable::map_align(by_cols('left','left','left','left','left','left')) |>
 huxtable::set_left_padding(1, c(2,5), 0 ) |>
 huxtable::set_left_padding(2, 1:6, 10 ) |>
 to_latex(tabular_only = T) |> cat()\n\n```")
-  out = c(out,knit_expanded)
+      out = c(out,knit_expanded)
 
 
 
-  knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-  out = c(out,knit_expanded)
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      out = c(out,knit_expanded)
 
-}
+    }
+
+
+
+
+  }
+
+
+
 
 
   return(out)

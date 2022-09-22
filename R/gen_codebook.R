@@ -214,19 +214,21 @@ gen_codebook = function(varname,meta_data,dataset){
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> huxtable::set_width(0.91) |>
+value_table = tables$value_table\n\n
+value_table = huxtable(value_table) |> theme_blue() |> huxtable::set_width(0.91) |>
                         set_col_width(expss::prop(c(1.5,3,1.5))) |>
                         huxtable::map_align(by_cols('left','center', 'center')) |>
                         style_header_cols(align = 'center') |>
                         huxtable::set_number_format(NA) |>
                         set_top_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
                         set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
-                        to_latex(tabular_only = T) |> cat()\n\n```")
+               to_latex(tabular_only = T) \n
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
 
       out = c(out,knit_expanded)
 
 
-      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n \\vspace*{-7mm} \n```\n\n")
       out = c(out,knit_expanded)
 
 

@@ -116,12 +116,13 @@ knit_function = function(knit_object){
 
 
 # define exactly where the meta file is located 
-meta_path = 
+meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/meta_data.rds"
 
 
 # global options 
 options(huxtable.bookdown = T)
 options(knitr.duplicate.label = "allow")
+options(scipen=999)
 
 ```
 
@@ -130,12 +131,16 @@ options(knitr.duplicate.label = "allow")
 ```{r}
 
 # read the meta file data in 
-meta_data <- readxl::read_excel(meta_path) |>
-  dplyr::select(-starts_with("NA")) |> tibble::as_tibble()
+meta_data <- readRDS(meta_path) |>
+  dplyr::select(-starts_with("NA")) |> tibble::as_tibble() |>
+  dplyr::filter(
+    # question_type == "select_one" | question_type == "indicator" | question_type == "text" |
+      question_type == "calculate" |  question_type == "integer" | question_type == "decimal" | var_name == "today"
+  )
 
 
 # read in the datafile
-dataset = 
+dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
 
 ```
 
@@ -223,6 +228,8 @@ variable_labels = meta_data$var_label
 ```{r}
 
 # generate the info for the first wave of variables
+
+test_vars = c("q001","q002a","q0_10","q0_0","q0_5a","q0_12_7","cnum","q4_30_2","q4_33","today")
 
 variable_names = meta_data$var_name
 

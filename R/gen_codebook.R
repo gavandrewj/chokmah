@@ -172,16 +172,21 @@ gen_codebook = function(varname,meta_data,dataset){
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-value_table = tables$value_table\n\n
-value_table = huxtable(value_table) |> theme_blue() |> set_width(0.96) |>
-                        set_col_width(c(0.1,0.5,0.17,0.15)) |> huxtable::map_align(by_cols('center','left', 'right','right')) |>
-style_header_cols(align = 'center')  |>
-to_latex(tabular_only = T) \n
-gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+               value_table = tables$value_table\n\n
+               value_table = huxtable(value_table) |>
+               theme_blue() |>
+               set_width(0.88) |>
+               set_col_width(expss::prop(c(1,3,2,1.2))) |>
+               huxtable::map_align(by_cols('center','left', 'center','center')) |>
+               style_header_cols(align = 'center')  |>
+               set_top_padding(row = 1:(nrow(value_table)+1),col = 1:4, value = 2) |>
+               set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:4, value = 2) |>
+               to_latex(tabular_only = T) \n
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
 
             out = c(out,knit_expanded)
 
-            knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+            knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n \\vspace*{-7mm} \n```\n\n")
 
             out = c(out,knit_expanded)
 
@@ -209,9 +214,14 @@ gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> huxtable::set_width(1.1) |>
-                        set_col_width(c(0.5,0.17,0.15)) |>
-                        huxtable::map_align(by_cols('left','center', 'center')) |> style_header_cols(align = 'center') |>  to_latex(tabular_only = T) |> cat()\n\n```")
+value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> huxtable::set_width(0.91) |>
+                        set_col_width(expss::prop(c(1.5,3,1.5))) |>
+                        huxtable::map_align(by_cols('left','center', 'center')) |>
+                        style_header_cols(align = 'center') |>
+                        huxtable::set_number_format(NA) |>
+                        set_top_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
+                        set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
+                        to_latex(tabular_only = T) |> cat()\n\n```")
 
       out = c(out,knit_expanded)
 
@@ -248,17 +258,21 @@ value_table = tables$value_table\n\nhuxtable(value_table) |> theme_blue() |> hux
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-value_table = tables$value_table\n\n
-value_table = huxtable(value_table) |> theme_blue() |> set_width(0.5) |>
-                        set_col_width(c(0.5,0.25,0.25)) |> huxtable::map_align(by_cols('left','center', 'center')) |>
-style_header_cols(align = 'center')  |>
-to_latex(tabular_only = T) \n
-gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+               value_table = tables$value_table\n\n
+               value_table = huxtable(value_table) |>
+               theme_blue() |>
+               set_width(0.91) |>
+               set_col_width(expss::prop(c(3,2,1))) |>
+               huxtable::map_align(by_cols('left','center', 'center')) |>
+               style_header_cols(align = 'center')  |>
+               set_top_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
+               set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
+               to_latex(tabular_only = T) \n
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
 
       out = c(out,knit_expanded)
 
-      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
-
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n \\vspace*{-7mm} \n```\n\n")
       out = c(out,knit_expanded)
 
 
@@ -282,16 +296,21 @@ gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
-value_table = tables$value_table\n\n
-value_table = huxtable(value_table) |> theme_blue() |> set_width(0.5) |>
-                        set_col_width(c(0.5,0.5)) |> huxtable::map_align(by_cols('center', 'center')) |>
-style_header_cols(align = 'center')  |>
-to_latex(tabular_only = T) \n
-gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+               value_table = tables$value_table\n\n
+               value_table = huxtable(value_table) |>
+               theme_blue() |>
+               set_width(0.25) |>
+               set_col_width(c(0.5,0.5)) |>
+               huxtable::map_align(by_cols('center', 'center')) |>
+               style_header_cols(align = 'center')  |>
+               set_top_padding(row = 1:2,col = 1:2, value = 2) |>
+               set_bottom_padding(row = 1:2,col = 1:2, value = 2) |>
+               to_latex(tabular_only = T) \n
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
 
       out = c(out,knit_expanded)
 
-      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n\n```\n\n")
+      knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n \\vspace*{-7mm} \n```\n\n")
 
       out = c(out,knit_expanded)
 
@@ -470,6 +489,8 @@ set_col_width(c(0.125,0.125,0.125,0.125,0.125,0.125,0.125,0.125)) |>
 huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |>
 huxtable::set_left_padding(1, c(2,5), 0 ) |>
 huxtable::set_left_padding(2, 1:8, 10 ) |>
+               set_top_padding(row = 1:2,col = 1:8, value = 2) |>
+               set_bottom_padding(row = 1:2,col = 1:8, value = 2) |>
 to_latex(tabular_only = T) |> cat()\n\n```")
       out = c(out,knit_expanded)
 
@@ -496,12 +517,17 @@ to_latex(tabular_only = T) |> cat()\n\n```")
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\n
-sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.71) |>
-set_col_width(expss::prop(c(0.08,0.09,0.08,0.08,0.125,0.08,0.08,0.08,0.08))) |>
-huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |>
-huxtable::set_left_padding(1, 1:8, 0 ) |>
-huxtable::set_left_padding(2, 1:8, 0 ) |>
-to_latex(tabular_only = T) |> cat()\n\n```")
+            sum_table = tables$sum_table\n\nhuxtable(sum_table) |>
+            theme_blue() |>
+            set_width(0.71) |>
+            set_col_width(expss::prop(c(0.08,0.09,0.08,0.08,0.125,0.08,0.08,0.08,0.08))) |>
+            huxtable::map_align(by_cols('left','left','left','left','left','left','left','left')) |>
+            huxtable::set_left_padding(1, 1:8, 0 ) |>
+            huxtable::set_left_padding(2, 1:8, 0 ) |>
+            set_top_padding(row = 1:2,col = 1:9, value = 2) |>
+            set_bottom_padding(row = 1:2,col = 1:9, value = 2) |>
+            huxtable::set_number_format(NA) |>
+            to_latex(tabular_only = T) |> cat()\n\n```")
       out = c(out,knit_expanded)
 
 
@@ -535,10 +561,14 @@ to_latex(tabular_only = T) |> cat()\n\n```")
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\n
-sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.75) |>
-set_col_width(expss::prop(c(1,1,1))) |>
-huxtable::map_align(by_cols('left','left','left')) |>
-to_latex(tabular_only = T) |> cat()\n\n```")
+              sum_table = tables$sum_table\n\nhuxtable(sum_table) |>
+              theme_blue() |>
+              set_width(0.91) |>
+              set_col_width(expss::prop(c(1,1,1))) |>
+              huxtable::map_align(by_cols('left','left','left')) |>
+              set_top_padding(row = 1:2,col = 1:3, value = 2) |>
+              set_bottom_padding(row = 1:2,col = 1:3, value = 2) |>
+              to_latex(tabular_only = T) |> cat()\n\n```")
 
       out = c(out,knit_expanded)
 
@@ -567,11 +597,13 @@ to_latex(tabular_only = T) |> cat()\n\n```")
 
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\n
-sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.75) |>
-set_col_width(expss::prop(c(1,1,1,1,1))) |>
-huxtable::map_align(by_cols('left','left','left','left','left')) |>
-huxtable::set_left_padding(1, c(2,5), 0 ) |>
-huxtable::set_left_padding(2, 1:5, 10 ) |>
+sum_table = tables$sum_table\n\nhuxtable(sum_table) |> theme_blue() |> set_width(0.82) |>
+set_col_width(expss::prop(c(1,1,1,1.25,1))) |>
+huxtable::map_align(by_cols('center','center','center','center','center')) |>
+huxtable::set_left_padding(1, 4, 0 ) |>
+huxtable::set_left_padding(2, 1:2, 0 ) |>
+               set_top_padding(row = 1:2,col = 1:5, value = 2) |>
+               set_bottom_padding(row = 1:2,col = 1:5, value = 2) |>
 to_latex(tabular_only = T) |> cat()\n\n```")
       out = c(out,knit_expanded)
 

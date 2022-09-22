@@ -96,49 +96,29 @@ gen_codetables = function(dataset,varname,meta_path){
   } else if(
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "date"){
 
-    codes = data.frame(
-      values = sjlabelled::get_values(dataset[[varname]]),
-      labels = sjlabelled::get_labels(dataset[[varname]])
-    ) |>
-      dplyr::filter(
-        labels != "Valid Date"
-      ) |>
-      dplyr::mutate(
-        freq = NA
-      )
-
-    invalid_codes = codes$values
-
-
-    for(invalid_code in codes$values){
-      codes[which(codes$values == invalid_code),'freq'] =   sum(dataset[[variable]] %in% invalid_code,na.rm = T)
-    }
-
-
-
-    codes[nrow(codes)+1,] = c(
-      "",
-      "Valid Date",
-      nrow(dataset) - sum(codes$freq,na.rm = T)
+    invalid_codes = chokmah::invalid_code_finder(
+      variable = varname,
+      dataset = dataset,
+      meta_path = meta_path,
+      write_meta = F
     )
 
+    codes = table(dataset[[varname]]) |>
+      as.matrix() |>
+      as.data.frame()
+
+    codes$label =  rownames(codes)
+    rownames(codes) = NULL
 
 
+    count_invalid = sum(codes$V1[match(invalid_codes,codes$label)],na.rm = T)
+    count_valid = nrow(dataset) - sum(codes$V1[match(invalid_codes,codes$label)],na.rm = T)
 
-    count_invalid = nrow(dataset) - as.numeric(codes$freq[which(codes$labels == "Valid Date")])
 
-
-    codes = codes  |>
-      dplyr::mutate(
-        freq = freq |> as.numeric(),
-        freq = paste0(freq," (",paste(round(freq/sum(freq,na.rm = T) * 100,1),"%",sep = ""),")")
-      ) |>
-      dplyr::rename(
-        Values = values,
-        Labels = labels,
-        Frequency = freq
-      )
-
+    codes = data.frame(
+      Valid = count_valid,
+      Invalid = count_invalid
+    )
 
 
     # add the format
@@ -155,21 +135,13 @@ gen_codetables = function(dataset,varname,meta_path){
         tzone
       ) |>
       dplyr::mutate(
-        "Format" = 'date_format',
-        count_invalid = count_invalid
+        "Format" = 'date_format'
       ) |>
       dplyr::rename(
         Start = start,
         End = end,
         Units = units,
         "Time Zone" = tzone
-      ) |>
-
-      dplyr::relocate(
-        count_invalid,.before = Start
-      ) |>
-      dplyr::rename(
-        "Invalid Count" = count_invalid
       )
 
 

@@ -362,6 +362,25 @@ gen_codetables = function(dataset,varname,meta_path){
 
   # sumtab_list = append(sumtab_list,list(sum_tab))
 
+
+
+  if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" |
+     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer"){
+
+    sum_table_one = sum_tab[,1:5]
+    sum_table_two = sum_tab[,6:9]
+
+    return(
+      list(
+        value_table = codes,
+        sum_table_one = sum_table_one,
+        sum_table_two = sum_table_two
+      )
+    )
+
+  } else {
+
+
   return(
     list(
       value_table = codes,
@@ -369,6 +388,7 @@ gen_codetables = function(dataset,varname,meta_path){
     )
   )
 
+  }
 }
 
 

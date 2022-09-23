@@ -135,7 +135,9 @@ meta_data <- readRDS(meta_path) |>
   dplyr::select(-starts_with("NA")) |> tibble::as_tibble() |>
   dplyr::filter(
     # question_type == "select_one" | question_type == "indicator" | question_type == "text" |
-      question_type == "calculate" |  question_type == "integer" | question_type == "decimal" | var_name == "today"
+      question_type == "calculate" |
+        question_type == "integer" 
+      # | question_type == "decimal" | var_name == "today"
   )
 
 

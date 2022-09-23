@@ -175,12 +175,12 @@ gen_codebook = function(varname,meta_data,dataset){
                value_table = tables$value_table\n\n
                value_table = huxtable(value_table) |>
                theme_blue() |>
-               set_width(0.88) |>
-               set_col_width(expss::prop(c(1,3,2,1.2))) |>
-               huxtable::map_align(by_cols('center','left', 'center','center')) |>
+               set_width(if(ncol(value_table) == 4){0.88} else {0.9155}) |>
+               set_col_width(expss::prop(if(ncol(value_table) == 4){c(1,3,2,1.2)} else {c(1,2,1)})) |>
+               huxtable::map_align(by_cols(if(ncol(value_table) == 4){c('center','left', 'center','center')} else {c('center','center','center')})) |>
                style_header_cols(align = 'center')  |>
-               set_top_padding(row = 1:(nrow(value_table)+1),col = 1:4, value = 2) |>
-               set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:4, value = 2) |>
+               set_top_padding(row = 1:(nrow(value_table)+1),col = if(ncol(value_table) == 4){1:4} else {1:3}, value = 2) |>
+               set_bottom_padding(row = 1:(nrow(value_table)+1),col = if(ncol(value_table) == 4){1:4} else {1:3}, value = 2) |>
                to_latex(tabular_only = T) \n
                gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
 

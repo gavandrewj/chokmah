@@ -116,7 +116,7 @@ knit_function = function(knit_object){
 
 
 # define exactly where the meta file is located 
-meta_path = 
+
 
 
 # global options 
@@ -135,7 +135,7 @@ meta_data <- readxl::read_excel(meta_path) |>
 
 
 # read in the datafile
-dataset = 
+
 
 ```
 

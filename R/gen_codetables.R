@@ -365,7 +365,8 @@ gen_codetables = function(dataset,varname,meta_path){
 
 
   if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" |
-     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer"){
+     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer" |
+     meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal"){
 
     sum_table_one = sum_tab[,1:5]
     sum_table_two = sum_tab[,6:9]

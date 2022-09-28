@@ -113,16 +113,16 @@ knit_function = function(knit_object){
 }
 
 
-
+dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/roster_mod4_31.rds")
+meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/metadata_roster_mod4_31.rds"
 
 # define exactly where the meta file is located 
-meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/meta_data.rds"
+# meta_path = "../meta_files/meta_data.rds"
 
 
 # global options 
 options(huxtable.bookdown = T)
 options(knitr.duplicate.label = "allow")
-options(scipen=999)
 
 ```
 
@@ -134,15 +134,18 @@ options(scipen=999)
 meta_data <- readRDS(meta_path) |>
   dplyr::select(-starts_with("NA")) |> tibble::as_tibble() |>
   dplyr::filter(
-    # question_type == "select_one" | question_type == "indicator" | question_type == "text" |
-      question_type == "calculate" |
-        question_type == "integer" 
-      # | question_type == "decimal" | var_name == "today"
+    question_type == "select_one" |
+     question_type == "indicator" |
+      question_type == "text" |
+        question_type == "calculate" |
+        question_type == "integer" |
+       question_type == "decimal" |
+     var_name == "today"
   )
 
 
 # read in the datafile
-dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
+# dataset = readRDS("~/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
 
 ```
 
@@ -204,25 +207,62 @@ toc_code |> cat()
 }
 
 
+
+```
+
+
+```{r results='asis'}
+print_toc_table(
+variable_names = meta_data$var_name[1:32],
+variable_labels = meta_data$var_label[1:32]
+)
+
 ```
 
 
 
-
-```{r results='asis',eval=T}
+```{r results='asis'}
 
 print_toc_table(
-variable_names = meta_data$var_name,
-variable_labels = meta_data$var_label
+variable_names = meta_data$var_name[33:65],
+variable_labels = meta_data$var_label[33:65]
 )
 
 
 ```
 
+```{r results='asis'}
 
+print_toc_table(
+variable_names = meta_data$var_name[66:98],
+variable_labels = meta_data$var_label[66:98]
+)
+
+
+```
+
+```{r results='asis'}
+
+print_toc_table(
+variable_names = meta_data$var_name[99:129],
+variable_labels = meta_data$var_label[99:129]
+)
+
+
+```
+
+```{r results='asis'}
+
+print_toc_table(
+variable_names = meta_data$var_name[130:162],
+variable_labels = meta_data$var_label[130:162]
+)
+
+
+```
 
 \restoregeometry
-\setlength{\footskip}{-1pt}
+\setlength{\footskip}{-1cm}
 
 \newpage
 
@@ -230,8 +270,7 @@ variable_labels = meta_data$var_label
 ```{r}
 
 # generate the info for the first wave of variables
-
-test_vars = c("q001","q002a","q0_10","q0_0","q0_5a","q0_12_7","cnum","q4_30_2","q4_33","today")
+test_vars = c("q001","q002a","q0_0","q0_5a","q0_12_7","cnum","q4_30_2","q4_33","today")
 
 variable_names = meta_data$var_name
 
@@ -247,4 +286,5 @@ list_to_knit = lapply(
 ```
 
 `r unlist(lapply(list_to_knit,knit_function))`
+
 

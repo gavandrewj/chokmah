@@ -12,33 +12,48 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# For questionnaires using an XLS Form
+Files
 
-## Phase One
+instrument_metadata. xlsx : this will not be edited by code in any way.
+Only by humans
 
-Create the cleaning meta files and initial formatting and documentation
+have a value label sheet named choices have a meta_data sheet named
+meta_data
 
-1.  create the folder for cleaning that one dataset.
-2.  download the dataset into downloads folder, download the xls form
-    into the meta files folder
-3.  use the create value labels and create meta data scripts to curate
-    the meta data
-4.  import and do the initial prep on the data using the cleaning
-    template and store data frame.
+1.  overhead file
 
-## Phase Two
+read in data
 
-Select the variables to clean
+drop unwanted columns
 
-use the create skeleton script to curate the code
+remove unwanted records ()
 
-clean those variables
+create variable types
 
-store in cleaned datafiles
+global replacements (make check for global)
 
-## Phase Three
+2.  create value labels file
 
-Create the codebook and review
+3.  create value label sheet in meta_data file
+
+4.  create the question meta data file -var_name
+
+-question_type select_one, indicator, text, calculate, integer, decimal,
+date
+
+-var_cleaning -value_label -var_conditional\
+-variable_label -recode T/F -possible_invalid_codes
+
+The var_name, quesiton_type and value_label must be filled out also the
+recode, possible invalid codes
+
+The meta_data file created internally will be updated from this external
+meta_file
+
+4.  create the skeleton code to do your initial checks and what not
+
+5.  when skeleton code has passed the stages then run all and write
+    datasets to cleaned locations
 
 # Meta Data File
 

@@ -1,18 +1,17 @@
-#  set paths
-path_xls = NULL # instrument xls form
-path_store_values = NULL
+# create value label scripts
+
 
 
 # read in the value label script file
 value_codes_file = readxl::read_excel(
-  path = path_xls,
+  path = "clean_main_data/meta_files/instrument_metadata.xlsx",
   sheet = "choices"
 ) |> tibble::tibble()
 
 
 # create file to store the value labels
 file.create(
-  path_store_values
+  "/skeletons/value_labels.R"
 )
 
 
@@ -40,16 +39,23 @@ towrite = paste0(names," = c(\n", paste0(split_data$stem,collapse = ',\n'),"\n)\
 
 readr::write_lines(
   towrite,
-  file = path_store_values,
+  file = "/skeletons/value_labels.R",
   append = T
 )
 
 }
 
+
+# read in the value labels
+source("/skeletons/value_labels.R")
+
+
 # remove some junk
 rm(
   towrite,
-  names
+  names,
+  split_data,
+  value_codes_file
   )
 
 

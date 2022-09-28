@@ -1,12 +1,14 @@
-# create paths
-path_xls = NULL # instrument xls form
-path_data = NULL # path to data you're cleaning
+# add directory name
+# run value label scripts
+source("/spellbook/tidy_reagents.R")
+
+source("/spellbook/create_value_labels.R")
 
 
-
+# read in the value label script file
 # remove some basic noise rows
 basic_meta = readxl::read_excel(
-  path = path_xls,
+  path = "/spellbook/instrument_metadata.xlsx",
   sheet = 1
 ) |> tibble::tibble() |>
   dplyr::filter(
@@ -17,10 +19,6 @@ basic_meta = readxl::read_excel(
             type != "end_repeat"
     )
 
-
-
-# create the initial value label identifiers; edit as you see necessary by removing other
-# question types
 
 basic_meta = basic_meta |>
   dplyr::mutate(
@@ -58,10 +56,6 @@ stringr::str_replace(
 # question_type_pattern = paste0( unique(basic_meta$value_label)[!unique(basic_meta$value_label) %in% ""] ,collapse = "|")
 
 
-# get the question type
-# make sure to edit to incldue the other types that are not searched for at the moment
-# or at least get the types from off of kobo one day
-
 basic_meta = basic_meta |>
   dplyr::mutate(
     question_type =
@@ -79,8 +73,7 @@ basic_meta = basic_meta |>
 
 
 
-# create the first sample of the meta
-# this does not have the expanded questions for multiple select items
+
 basic_meta = basic_meta |>
   dplyr::select(
     type,
@@ -97,34 +90,41 @@ basic_meta = basic_meta |>
     var_label = label
   )
 
-
-
-# read in the dataset that you are to be cleaning
-main_data <- readxl::read_excel(path_data)
-
-meta_data = data.frame(
-var_name = main_data |>
-  janitor::clean_names() |>
-  names(),
-question_type = "",
-value_label = "",
-var_conditional = "",
-var_cleaning = "",
-var_label = "",
-recode = F,
-brief_desc = "",
-var_type = "",
-interval_type = "",
-possible_invalid_codes = "",
-invalid_codes = "",
-new_page = F,
-table_break = NA,
-var_special = NA
+saveRDS(
+  basic_meta,
+  "/spellbook/base_meta_data.rds"
 )
 
 
 
-# match the info from the basic meta over to the full meta file
+# create a datafile where for each variable in the dataset you will have the
+# value label assigned as well as question type.
+
+# match the varname to the variable type to start things off then use an excel file
+# to drag down and finish the assignment..or..fucking do it yourself and have
+# the code to show your fuck ups and verify it by printing out the excel files
+
+
+
+meta_data = data.frame(
+  var_name = dataset |>
+    janitor::clean_names() |>
+    names(),
+  question_type = "",
+  value_label = "",
+  var_conditional = "",
+  var_cleaning = "",
+  var_label = "",
+  recode = F,
+  brief_desc = "",
+  var_type = "",
+  interval_type = "",
+  possible_invalid_codes = "",
+  invalid_codes = "",
+  new_page = F,
+  table_break = NA,
+  var_special = NA
+)
 
 for(names in basic_meta$var_name){
 
@@ -135,43 +135,72 @@ meta_data$var_label[which(meta_data$var_name == names)] = basic_meta$var_label[w
 }
 
 
-# read in any existing meta file and use that information instead
+rm(basic_meta)
 
 instrument_metadata <- readxl::read_excel(
-  path_xls,
-  sheet = "meta_data")
+  "/spellbook/instrument_metadata.xlsx",
+  sheet = "meta_data") |>
+  dplyr::filter(
+    var_name != "note0" & var_name != "note2" & var_name != "notes"
+  )
 
 meta_data = meta_data |>
   dplyr::mutate(
     var_label = instrument_metadata$variable_label,
     question_type = instrument_metadata$question_type,
     value_label = instrument_metadata$value_label,
-    var_conditional = instrument_metadata$var_conditional
+    var_conditional = instrument_metadata$var_conditional,
+    var_cleaning = instrument_metadata$var_cleaning,
+    recode = instrument_metadata$recode,
+    possible_invalid_codes = instrument_metadata$possible_invalid_codes
   )
 
+rm(instrument_metadata)
 
 
-# fill in the question type, invalid codes and other info
 meta_data = meta_data |>
   dplyr::mutate(
-    var_type = ifelse(question_type == "select_one" | question_type == "indicator","numeric",var_type),
+    var_type = ifelse(question_type == "select_one" | question_type == "indicator" | question_type == "integer" | question_type == "decimal" | question_type == "calculate","numeric",var_type),
+    var_type = ifelse(question_type == "text","character",var_type),
+    question_type = ifelse(question_type == "today" | question_type == "time" | question_type == "start" | question_type == "end","date",question_type),
     interval_type = ifelse(question_type == "select_one" | question_type == "indicator","discrete",interval_type),
-    possible_invalid_codes = "-3,-1,-99"
+    interval_type = ifelse(question_type == "integer" | question_type == "decimal" | question_type == "calculate","continuous",interval_type),
+    var_type = ifelse(question_type == "date","character",var_type),
+    possible_invalid_codes = ifelse(is.na(possible_invalid_codes),"-3,-99,-1,-2",possible_invalid_codes)
+
+
+
+    # possible_invalid_codes = "-3,-1,-99"
   ) |>
   dplyr::filter(
     # question_type == "select_one" | question_type == "indicator" | question_type == "text" |
       # question_type == "integer" | question_type == "decimal"
-     question_type != "select_multiple"
+     # question_type != "select_multiple"
   )
 
 
 
+meta_data$question_type[stringr::str_detect(meta_data$var_name,pattern = "gps")] = "gps"
+meta_data$question_type[meta_data$var_name %in% c("id","index","status","submission_time","submitted_by","tags","uuid","validation_status")] = "misc"
+
+
+
+
+# add the directory names
 xlsx::write.xlsx(
   meta_data,
-  file = "clean_main_data/meta_files/meta_data.xlsx"
+  file = "/spellbook/meta_data.xlsx"
 )
 
 saveRDS(
   meta_data,
-  file = "clean_main_data/meta_files/meta_data.rds"
+  file = "/spellbook/meta_data.rds"
 )
+
+saveRDS(
+  dataset,
+  "/undead_army/dataset.rds"
+)
+rm(dataset)
+
+

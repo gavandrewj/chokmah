@@ -10,7 +10,112 @@
 gen_codetables = function(dataset,varname,meta_path){
 
 
-  if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "text"){
+  if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
+
+    codes = table(dataset[[varname]]) |>
+      as.matrix() |>
+      as.data.frame()
+
+    codes$value =  rownames(codes)
+    rownames(codes) = NULL
+
+    codes = codes |>
+      dplyr::rename(
+        freq = V1
+      ) |>
+      dplyr::mutate(
+        valid = freq,
+        freq = paste(freq," (",round(freq/sum(freq,na.rm = T) * 100,1),"%",")",sep = "")
+      )
+
+    invalid_codes = chokmah::invalid_code_finder(
+      variable = varname,
+      dataset = dataset,
+      meta_path = meta_path,
+      write_meta = F
+    )
+
+    codes$valid[which(codes$value %in% invalid_codes)] = NA
+
+    count_valid = sum(codes$valid,na.rm = T)
+    count_invalid = nrow(dataset) - count_valid
+
+
+    codes = codes[which(codes$value %in% invalid_codes),]
+
+
+
+
+
+    if(!rlang::is_null(sjlabelled::get_values(dataset[[varname]]))){
+
+
+
+      codes_table = data.frame(
+        values = sjlabelled::get_values(dataset[[varname]]),
+        labels = sjlabelled::get_labels(dataset[[varname]])
+      )
+
+
+      codes$label = codes_table$labels[match(codes$value,codes_table$values)]
+
+
+
+
+      # if the var type is interval then remove the label column and rename label as the values
+
+      codes = codes |>
+        dplyr::relocate(
+          value,
+          .before  = "freq"
+        ) |>
+        dplyr::relocate(
+          label,
+          .after = "value"
+        ) |>
+        dplyr::rename(
+          Label = label,
+          Value = value,
+          Frequency = freq
+          ) |>
+        dplyr::select(
+          !valid
+        )
+
+    } else {
+
+      codes = codes |>
+        dplyr::relocate(
+          value,
+          .before  = "freq"
+        ) |>
+        dplyr::rename(
+          Label = value,
+          Frequency = freq,
+          "Valid %" = valid
+        )
+
+
+    }
+
+ if(rlang::is_empty(codes$Label)){
+
+   codes = data.frame(
+     " " = "No Invalid codes"
+   ) |>
+     dplyr::rename(
+       " " = X.
+     )
+
+ }
+
+
+    # neaten table by removing na and such
+    codes[is.na(codes)] = "-"
+    codes[codes == "NA%"] = "-"
+
+
+  } else if(as.logical(meta_data[meta_data[['var_name']] == varname,"question_type"] == "text")){
 
     codes = table(dataset[[varname]]) |>
       as.matrix() |>
@@ -76,25 +181,12 @@ gen_codetables = function(dataset,varname,meta_path){
       )
 
 
-    # remove the non-valid data
-    sum_data =   dataset[[varname]][!dataset[[varname]] %in% invalid_codes]
 
-    sum_tab = data.frame(
-      valid = count_valid,
-      invalid = count_invalid,
-      mode = paste0(chokmah::find_modes(sum_data),collapse = ",")
-    ) |>
-      dplyr::rename(
-        Valid = valid,
-        Invalid = invalid,
-        Mode = mode
-      )
-
-    sum_tab[sum_tab == "NA"] = "-"
 
 
   } else if(
-    meta_data[meta_data[['var_name']] == varname,"question_type"] == "date"){
+    as.logical(meta_data[meta_data[['var_name']] == varname,"question_type"] == "date")
+    ){
 
     invalid_codes = chokmah::invalid_code_finder(
       variable = varname,
@@ -146,11 +238,13 @@ gen_codetables = function(dataset,varname,meta_path){
 
 
   } else if(
+   as.logical(
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "select_one" |
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "indicator" |
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer" |
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" |
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal"
+   )
   ){
 
 
@@ -179,7 +273,7 @@ gen_codetables = function(dataset,varname,meta_path){
       variable = varname,
       dataset = dataset,
       meta_path = meta_path,
-      write_meta = F
+      write_meta = T
     )
 
 
@@ -257,11 +351,30 @@ gen_codetables = function(dataset,varname,meta_path){
   }
 
   # prepare the summary metric tables
-  if(
+
+
+  if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
+
+    sum_tab = data.frame(
+      Valid = count_valid,                             # add the valid and invalid counts
+      Invalid = count_invalid
+    )
+
+  } else if(
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal" |
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" |
     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer"
   ){
+
+
+    if(!rlang::is_null(sjlabelled::get_values(dataset[[varname]]))){
+    codes = codes[codes$Label %in% codes_table$labels,]
+    } else {
+    codes = data.frame(
+      values = "Do not report"
+    )
+
+    }
 
 
     # remove the non-valid data
@@ -357,6 +470,29 @@ gen_codetables = function(dataset,varname,meta_path){
       ) |>
       dplyr::relocate(Valid,.before = Min) |>            #relocate some stuff
       dplyr::relocate(Invalid,.before = Min)
+
+  } else if(
+    meta_data[meta_data[['var_name']] == varname,"question_type"] == "text"
+  ){
+
+
+    # remove the non-valid data
+    sum_data =   dataset[[varname]][!dataset[[varname]] %in% invalid_codes]
+
+    sum_tab = data.frame(
+      valid = count_valid,
+      invalid = count_invalid,
+      mode = paste0(chokmah::find_modes(sum_data),collapse = ",")
+    ) |>
+      dplyr::rename(
+        Valid = valid,
+        Invalid = invalid,
+        Mode = mode
+      )
+
+    sum_tab[sum_tab == "NA"] = "-"
+
+
   }
 
 
@@ -364,15 +500,41 @@ gen_codetables = function(dataset,varname,meta_path){
 
 
 
-  if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" |
-     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer" |
-     meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal"){
+  if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" & !as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"]) |
+     meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer" & !as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"]) |
+     meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal" &  !as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"]) ){
 
     sum_table_one = sum_tab[,1:5]
     sum_table_two = sum_tab[,6:9]
 
+
+    # create the rain chart for the numeric display
+
+    data_set = data.frame(
+      sum_var = sum_data
+    )
+
+    if(sum(is.na(data_set)) != nrow(data_set)){
+    numeric_rain_plot = rain_plot(
+      dataset = data_set,
+      varname = "sum_var"
+    ) +
+      ggplot2::scale_y_continuous(labels =  scales::comma)
+    } else {
+      numeric_rain_plot = "&nbsp;"
+}
+
+
+    if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
+      codes =  data.frame(
+        Valid = count_valid,                             # add the valid and invalid counts
+        Invalid = count_invalid
+      )
+    }
+
     return(
       list(
+        plot = numeric_rain_plot,
         value_table = codes,
         sum_table_one = sum_table_one,
         sum_table_two = sum_table_two
@@ -380,6 +542,14 @@ gen_codetables = function(dataset,varname,meta_path){
     )
 
   } else {
+
+
+    if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
+      codes =  data.frame(
+        Valid = count_valid,                             # add the valid and invalid counts
+        Invalid = count_invalid
+      )
+    }
 
 
   return(

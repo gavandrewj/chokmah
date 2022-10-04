@@ -16,5 +16,5 @@ Returns how many missing, not applicable values along with what values stop the 
 Clean Continuous Variable
 }
 \examples{
-clean_continuous(c(rnorm(500),NA,"Not Applicable")
+clean_continuous(c(rnorm(500),NA,"Not Applicable"))
 }

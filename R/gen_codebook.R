@@ -148,6 +148,81 @@ gen_codebook = function(varname,meta_data,dataset){
   out = c(out,knit_expanded)
 
 
+  if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
+
+
+    knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+    out = c(out,knit_expanded)
+
+
+
+    knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+    out = c(out,knit_expanded)
+
+
+
+
+    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+    out = c(out,knit_expanded)
+
+
+
+
+
+    knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
+value_table = tables$value_table\n\n
+
+value_table = huxtable(value_table) |> theme_blue() |> huxtable::set_width(0.5) |>
+                        set_col_width(expss::prop(c(2,2))) |>
+                        huxtable::map_align(by_cols(c('center','center'))) |>
+                        style_header_cols(align = 'center') |>
+                        huxtable::set_number_format(NA) |>
+                        set_top_padding(row = 1:(nrow(value_table)+1),col = 1:2, value = 2) |>
+                        set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:2, value = 2) |>
+               to_latex(tabular_only = T) \n
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat() \n\n```")
+
+    out = c(out,knit_expanded)
+
+
+    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n \\vspace*{-7mm} \n```\n\n")
+    out = c(out,knit_expanded)
+
+
+
+  } else {
+
+
+
+  if(
+    meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal" & sum(is.na(table_break_vals)) == 1 |
+    meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer" & sum(is.na(table_break_vals)) == 1 |
+    meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" & sum(is.na(table_break_vals)) == 1
+    ){
+
+    knit_expanded <- paste0("\n```{=latex}\n\n\\begin{minipage}[t]{0.3\\linewidth}\n\n```")
+    out = c(out,knit_expanded)
+
+    knit_expanded <- paste0("\n```{r results='asis'}\n\ncat('&nbsp;')\n\n```")
+    out = c(out,knit_expanded)
+
+    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}%\n\\begin{minipage}[t]{0.7\\linewidth}\n\n```")
+    out = c(out,knit_expanded)
+
+    knit_expanded <- paste0("\n```{r ",paste0(varname,"_rainplot"),",fig.retina = 5,fig.height = 1.5,fig.width = 5.5",ifelse(sum(is.na(dataset[[varname]])) == nrow(dataset),",results = 'asis'",""),"}\n\n
+                            plot = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')$plot\n
+                            if(sum(is.na(dataset[['",varname,"']])) == nrow(dataset)){'&nbsp;' |> cat()} else {plot}
+                            \n\n```")
+
+    out = c(out,knit_expanded)
+
+    knit_expanded <- paste0("\n```{=latex}\n\n\\end{minipage}\n \\vspace*{-5mm} \n```\n\n")
+
+    out = c(out,knit_expanded)
+
+  }
+
+
 
   if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "numeric" & sum(is.na(table_break_vals)) == 1){
 
@@ -173,6 +248,13 @@ gen_codebook = function(varname,meta_data,dataset){
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
                value_table = tables$value_table\n\n
+
+               if(ncol(value_table) == 1){ \n
+
+                        cat('&nbsp;')
+
+                         } else { \n
+
                value_table = huxtable(value_table) |>
                theme_blue() |>
                set_width(if(ncol(value_table) == 4){0.88} else {0.9155}) |>
@@ -182,7 +264,7 @@ gen_codebook = function(varname,meta_data,dataset){
                set_top_padding(row = 1:(nrow(value_table)+1),col = if(ncol(value_table) == 4){1:4} else {1:3}, value = 2) |>
                set_bottom_padding(row = 1:(nrow(value_table)+1),col = if(ncol(value_table) == 4){1:4} else {1:3}, value = 2) |>
                to_latex(tabular_only = T) \n
-               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()}\n\n```")
 
             out = c(out,knit_expanded)
 
@@ -215,6 +297,11 @@ gen_codebook = function(varname,meta_data,dataset){
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
 value_table = tables$value_table\n\n
+if(ncol(value_table) == 1){ \n
+
+cat('&nbsp;')
+
+} else { \n
 value_table = huxtable(value_table) |> theme_blue() |> huxtable::set_width(if(ncol(value_table) == 3) {0.91} else {0.88}) |>
                         set_col_width(expss::prop(if(ncol(value_table) == 3){c(1.5,3,1.5)} else {c(1,1.5,2,1)})) |>
                         huxtable::map_align(by_cols(if(ncol(value_table) == 3){c('center','center', 'center')} else {c('center','center','center','center')})) |>
@@ -223,7 +310,7 @@ value_table = huxtable(value_table) |> theme_blue() |> huxtable::set_width(if(nc
                         set_top_padding(row = 1:(nrow(value_table)+1),col = if(ncol(value_table) == 3) {1:3} else {1:4}, value = 2) |>
                         set_bottom_padding(row = 1:(nrow(value_table)+1),col = if(ncol(value_table) == 3) {1:3} else {1:4}, value = 2) |>
                to_latex(tabular_only = T) \n
-               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat() \n}\n\n```")
 
       out = c(out,knit_expanded)
 
@@ -261,6 +348,12 @@ value_table = huxtable(value_table) |> theme_blue() |> huxtable::set_width(if(nc
 
       knit_expanded <- paste0("\n```{r results='asis'}\n\ntables = chokmah::gen_codetables(dataset = dataset,meta_path = meta_path,varname = '",varname,"')\n
                value_table = tables$value_table\n\n
+
+               if(ncol(value_table) == 1){ \n
+
+                          cat('&nbsp;')
+
+                   } else { \n
                value_table = huxtable(value_table) |>
                theme_blue() |>
                set_width(0.91) |>
@@ -270,7 +363,7 @@ value_table = huxtable(value_table) |> theme_blue() |> huxtable::set_width(if(nc
                set_top_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
                set_bottom_padding(row = 1:(nrow(value_table)+1),col = 1:3, value = 2) |>
                to_latex(tabular_only = T) \n
-               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()\n\n```")
+               gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label{",varname,"}\\n\\\\end{tabularx}',value_table,fixed = T) |> cat()}\n\n```")
 
       out = c(out,knit_expanded)
 
@@ -459,13 +552,17 @@ gsub(pattern = '\\\\end{tabularx}',replacement = '\\\\phantomsection\\n\\\\label
 
 
 
-
+}
 
 
 
   # summary stats
 
-  if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "numeric"){
+  if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
+
+
+
+  } else if(meta_data[meta_data[['var_name']] == varname,"var_type"] == "numeric"){
 
     if(meta_data[meta_data[['var_name']] == varname,"interval_type"] == "discrete"){
 

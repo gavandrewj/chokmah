@@ -6,17 +6,30 @@
 #' @export
 #'
 #' @examples
-#' clean_continuous(c(rnorm(500),NA,"Not Applicable")
+#' clean_continuous(c(rnorm(500),NA,"Not Applicable"))
 clean_continuous = function(var){
 
   # change the variable to lower case to check for not applicable
   var_label = sjlabelled::get_label(var)
+  value_label = sjlabelled::get_labels(var)
   var = tolower(var)
   not_app =   which(var == 'not applicable')
+  neg_three =   which(var == -3)
+  neg_two =   which(var == -2)
+  neg_one =   which(var == -1)
 
-  # how many not appliable are there
+  # how many not applicable are there
   length_notapp = length(not_app)
   percent_notapp = round(length_notapp/length(var) * 100,2)
+
+  length_neg_three = length(neg_three)
+  percent_neg_three = round(length_neg_three/length(var) * 100,2)
+
+  length_neg_two = length(neg_two)
+  percent_neg_two = round(length_neg_two/length(var) * 100,2)
+
+  length_neg_one = length(neg_one)
+  percent_neg_one = round(length_neg_one/length(var) * 100,2)
 
 
   # how many missing values are there
@@ -56,7 +69,15 @@ clean_continuous = function(var){
 
     message(paste0("There are ",length_notapp," (",percent_notapp,")% not applicable values",sep = " "))
 
+    message(paste0("There are ",length_neg_three," (",percent_neg_three,")% -3 values",sep = " "))
+
+    message(paste0("There are ",length_neg_two," (",percent_neg_two,")% -2 values",sep = " "))
+
+    message(paste0("There are ",length_neg_one," (",percent_neg_one,")% -1 values",sep = " "))
+
     message(paste0("Variable label: ",var_label,sep = " "))
+
+    message(paste0("Value label ",value_label,sep = " "))
 
     return(p)
 
@@ -71,6 +92,12 @@ clean_continuous = function(var){
     message(paste0("There are ",num_missing," (",percent_missing,")% missing values",sep = " "))
 
     message(paste0("There are ",length_notapp," (",percent_notapp,")% not applicable values",sep = " "))
+
+    message(paste0("There are ",length_neg_three," (",percent_neg_three,")% -3 values",sep = " "))
+
+    message(paste0("There are ",length_neg_two," (",percent_neg_two,")% -2 values",sep = " "))
+
+    message(paste0("There are ",length_neg_one," (",percent_neg_one,")% -1 values",sep = " "))
 
     message("The following prevents a conversion to a continuous variable:")
 

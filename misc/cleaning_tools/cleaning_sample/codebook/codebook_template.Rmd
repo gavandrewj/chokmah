@@ -113,8 +113,8 @@ knit_function = function(knit_object){
 }
 
 
-dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/roster_mod4_31.rds")
-meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/metadata_roster_mod4_31.rds"
+dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/roster_mod7_16.rds")
+meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/metadata_roster_mod7_16.rds"
 
 # define exactly where the meta file is located 
 # meta_path = "../meta_files/meta_data.rds"
@@ -146,6 +146,9 @@ meta_data <- readRDS(meta_path) |>
 
 # read in the datafile
 # dataset = readRDS("~/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
+
+# meta_data$suppress_valtab[which(meta_data$var_name == "lcost_pos")] = T
+# meta_data$suppress_valtab[which(meta_data$var_name == "q4_24a")] = T
 
 ```
 

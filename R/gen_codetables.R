@@ -32,7 +32,7 @@ gen_codetables = function(dataset,varname,meta_path){
       variable = varname,
       dataset = dataset,
       meta_path = meta_path,
-      write_meta = F
+      write_meta = T
     )
 
     codes$valid[which(codes$value %in% invalid_codes)] = NA
@@ -140,7 +140,7 @@ gen_codetables = function(dataset,varname,meta_path){
       variable = varname,
       dataset = dataset,
       meta_path = meta_path,
-      write_meta = F
+      write_meta = T
     )
 
 
@@ -192,7 +192,7 @@ gen_codetables = function(dataset,varname,meta_path){
       variable = varname,
       dataset = dataset,
       meta_path = meta_path,
-      write_meta = F
+      write_meta = T
     )
 
     codes = table(dataset[[varname]]) |>
@@ -350,7 +350,10 @@ gen_codetables = function(dataset,varname,meta_path){
 
   }
 
-  # prepare the summary metric tables
+
+
+
+############## prepare the summary metric tables #################################
 
 
   if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
@@ -390,9 +393,9 @@ gen_codetables = function(dataset,varname,meta_path){
       # rbind(
       #   c("Mode",Modes(dataset[[varname]]))
       # )  |>
-      rbind(
-        c("SD",sd(sum_data))                                    #append the standard deviation
-      ) |>
+      # rbind(
+      #   c("SD",sd(sum_data))                                    #append the standard deviation
+      # ) |>
       t() |>
       as.data.frame()
 
@@ -400,6 +403,8 @@ gen_codetables = function(dataset,varname,meta_path){
     sum_tab =  sum_tab[-1,]
 
     sum_tab = sum_tab |>
+      dplyr::select(!Mean) |>
+
       dplyr::mutate(
         valid = count_valid,                             # add the valid and invalid counts
         invalid = count_invalid
@@ -409,7 +414,6 @@ gen_codetables = function(dataset,varname,meta_path){
       ) |>
       dplyr::relocate(valid,.before = Min) |>                       #relocate and rename some stuff
       dplyr::relocate(invalid,.before = Min) |>
-      dplyr::relocate(Mean,.before = SD) |>
       dplyr::rename(
         "Valid" = valid,
         "Invalid" = invalid,
@@ -490,7 +494,14 @@ gen_codetables = function(dataset,varname,meta_path){
         Mode = mode
       )
 
-    sum_tab[sum_tab == "NA"] = "-"
+    # sum_tab[sum_tab == "NA"] = "-"
+
+    if(sum(is.na(sum_data))>0){
+      sum_tab = sum_tab |>
+        dplyr::mutate(
+          Unaccounted = sum(is.na(sum_data))
+        )
+    }
 
 
   }
@@ -499,13 +510,25 @@ gen_codetables = function(dataset,varname,meta_path){
   # sumtab_list = append(sumtab_list,list(sum_tab))
 
 
+  # re-order the codes table row such that the invalid codes are on top
+
+  if(paste0(invalid_codes,collapse = "") != "" & meta_data[meta_data[['var_name']] == varname,"question_type"] == "text"){
+
+    codes =
+      rbind(
+        codes[which(codes$Label %in% invalid_codes),],
+        codes[which(!codes$Label %in% invalid_codes),]
+    )
+  }
+
+
 
   if(meta_data[meta_data[['var_name']] == varname,"question_type"] == "calculate" & !as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"]) |
      meta_data[meta_data[['var_name']] == varname,"question_type"] == "integer" & !as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"]) |
      meta_data[meta_data[['var_name']] == varname,"question_type"] == "decimal" &  !as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"]) ){
 
-    sum_table_one = sum_tab[,1:5]
-    sum_table_two = sum_tab[,6:9]
+    # sum_table_one = sum_tab[,1:5]
+    # sum_table_two = sum_tab[,6:9]
 
 
     # create the rain chart for the numeric display
@@ -519,7 +542,12 @@ gen_codetables = function(dataset,varname,meta_path){
       dataset = data_set,
       varname = "sum_var"
     ) +
-      ggplot2::scale_y_continuous(labels =  scales::comma)
+      if(sum(data_set$sum_var < 0,na.rm = T) != 0){
+      ggplot2::scale_y_continuous(labels =  scales::comma,oob = scales::squish)
+      } else {
+        ggplot2::scale_y_continuous(labels =  scales::comma)
+      }
+
     } else {
       numeric_rain_plot = "&nbsp;"
 }
@@ -536,8 +564,9 @@ gen_codetables = function(dataset,varname,meta_path){
       list(
         plot = numeric_rain_plot,
         value_table = codes,
-        sum_table_one = sum_table_one,
-        sum_table_two = sum_table_two
+        # sum_table_one = sum_table_one,
+        # sum_table_two = sum_table_two
+        sum_table = sum_tab
       )
     )
 

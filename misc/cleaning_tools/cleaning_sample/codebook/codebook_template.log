@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.3)  3 OCT 2022 21:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.3)  4 OCT 2022 22:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1212,206 +1212,260 @@ Underfull \hbox (badness 10000) in paragraph at lines 1618--1629
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 1667--1667
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 1671--1671
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 1697--1697
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 1671--1671
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1706--1707
+Overfull \hbox (84.00592pt too wide) in alignment at lines 1671--1671
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1712--1713
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1680--1681
 [][][][][][][] 
  []
 
 
-Overfull \hbox (52.99998pt too wide) in alignment at lines 1786--1786
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1686--1687
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (47.99998pt too wide) in alignment at lines 1760--1760
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1758--1790
+Underfull \hbox (badness 10000) in paragraph at lines 1732--1764
 [][][]
  []
 
 
-Overfull \hbox (1.52516pt too wide) in paragraph at lines 1836--1836
-[][][]\T1/lmr/bx/n/10 Valid[][]  
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 1810--1810
+[][]\T1/lmr/bx/n/10 Invalid[]  
  []
 
 
-Overfull \hbox (3.65065pt too wide) in paragraph at lines 1836--1836
-[][][]\T1/lmr/bx/n/10 Invalid[][]  
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 1810--1810
+[][]\T1/lmr/bx/n/10 Median[]  
  []
 
 
-Overfull \hbox (7.17198pt too wide) in paragraph at lines 1836--1836
-[][][]\T1/lmr/bx/n/10 Median[][]  
+Overfull \hbox (0.84596pt too wide) in paragraph at lines 1810--1810
+[][]\T1/lmr/bx/n/10 NA's[]  
  []
 
 
-Overfull \hbox (0.84596pt too wide) in paragraph at lines 1836--1836
-[][][]\T1/lmr/bx/n/10 NA's[][]  
- []
-
-
-Overfull \hbox (4.0679pt too wide) in paragraph at lines 1836--1836
-[][][]\T1/lmr/bx/n/10 Mode[][]  
- []
-
-
-Overfull \hbox (154.57849pt too wide) in alignment at lines 1836--1836
+Overfull \hbox (144.57849pt too wide) in alignment at lines 1810--1810
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1845--1846
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1819--1820
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1851--1852
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1825--1826
 [][][][][][][] 
  []
 
 <codebook_template_files/figure-latex/q7_26_rainplot-1.pdf, id=43, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_26_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_26_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_26_rainplot-1.pdf  used on input line 1906.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_26_rainplot-1.pdf  used on input line 1880.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1899--1910
+Underfull \hbox (badness 10000) in paragraph at lines 1873--1884
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1911--1922
+Underfull \hbox (badness 10000) in paragraph at lines 1885--1896
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 1960--1960
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 1940--1940
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 1990--1990
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 1940--1940
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1999--2000
+Overfull \hbox (140.5979pt too wide) in alignment at lines 1940--1940
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1949--1950
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2005--2006
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1955--1956
 [][][][][][][] 
+ []
+
+<codebook_template_files/figure-latex/q7_27_rainplot-1.pdf, id=44, 385.44pt x 57.21375pt>
+File: codebook_template_files/figure-latex/q7_27_rainplot-1.pdf Graphic file (type pdf)
+<use codebook_template_files/figure-latex/q7_27_rainplot-1.pdf>
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_27_rainplot-1.pdf  used on input line 2008.
+(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2001--2012
+[][][]
  []
 
 [7
 
  <./codebook_template_files/figure-latex/help_pos_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_26_rainplot-1.pdf>]
-<codebook_template_files/figure-latex/q7_27_rainplot-1.pdf, id=70, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_27_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_27_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_27_rainplot-1.pdf  used on input line 2060.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2053--2064
+Underfull \hbox (badness 10000) in paragraph at lines 2013--2024
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2065--2076
-[][][]
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2068--2068
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 2114--2114
-[][][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2068--2068
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 2144--2144
-[][][][] 
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2068--2068
+[][][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2153--2154
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2077--2078
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2159--2160
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2083--2084
 [][][][][][][] 
  []
 
 <codebook_template_files/figure-latex/q7_28_rainplot-1.pdf, id=71, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_28_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_28_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_28_rainplot-1.pdf  used on input line 2214.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_28_rainplot-1.pdf  used on input line 2136.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2207--2218
+Underfull \hbox (badness 10000) in paragraph at lines 2129--2140
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2219--2230
+Underfull \hbox (badness 10000) in paragraph at lines 2141--2152
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 2268--2268
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2196--2196
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 2298--2298
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2196--2196
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2307--2308
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2196--2196
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2205--2206
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2313--2314
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2211--2212
 [][][][][][][] 
  []
 
 <codebook_template_files/figure-latex/q7_29_rainplot-1.pdf, id=72, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_29_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_29_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_29_rainplot-1.pdf  used on input line 2368.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_29_rainplot-1.pdf  used on input line 2264.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2361--2372
+Underfull \hbox (badness 10000) in paragraph at lines 2257--2268
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2373--2384
+Underfull \hbox (badness 10000) in paragraph at lines 2269--2280
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 2422--2422
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2324--2324
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 2452--2452
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2324--2324
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2324--2324
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2333--2334
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2339--2340
+[][][][][][][] 
+ []
+
+<codebook_template_files/figure-latex/q7_30_rainplot-1.pdf, id=73, 385.44pt x 57.21375pt>
+File: codebook_template_files/figure-latex/q7_30_rainplot-1.pdf Graphic file (type pdf)
+<use codebook_template_files/figure-latex/q7_30_rainplot-1.pdf>
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_30_rainplot-1.pdf  used on input line 2392.
+(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2385--2396
+[][][]
+ []
+
+[8 <./codebook_template_files/figure-latex/q7_27_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_28_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_29_rainplot-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 2397--2408
+[][][]
+ []
+
+
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2452--2452
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2452--2452
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2452--2452
+[][][][][][][][] 
  []
 
 
@@ -1424,346 +1478,469 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 2467--2468
 [][][][][][][] 
  []
 
-[8 <./codebook_template_files/figure-latex/q7_27_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_28_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_29_rainplot-1.pdf>]
-<codebook_template_files/figure-latex/q7_30_rainplot-1.pdf, id=110, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_30_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_30_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_30_rainplot-1.pdf  used on input line 2522.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2515--2526
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2527--2538
-[][][]
- []
-
-
-Overfull \hbox (66.01187pt too wide) in alignment at lines 2576--2576
-[][][][][] 
- []
-
-
-Overfull \hbox (52.99997pt too wide) in alignment at lines 2606--2606
-[][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2615--2616
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2621--2622
-[][][][][][][] 
- []
-
 <codebook_template_files/figure-latex/q7_31_rainplot-1.pdf, id=111, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_31_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_31_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_31_rainplot-1.pdf  used on input line 2676.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_31_rainplot-1.pdf  used on input line 2520.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2669--2680
+Underfull \hbox (badness 10000) in paragraph at lines 2513--2524
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2681--2692
+Underfull \hbox (badness 10000) in paragraph at lines 2525--2536
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 2730--2730
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2580--2580
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 2760--2760
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2580--2580
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2769--2770
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2580--2580
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2589--2590
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2775--2776
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2595--2596
 [][][][][][][] 
  []
 
 <codebook_template_files/figure-latex/q7_32_rainplot-1.pdf, id=112, 390.45876pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_32_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_32_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_32_rainplot-1.pdf  used on input line 2830.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_32_rainplot-1.pdf  used on input line 2648.
 (pdftex.def)             Requested size: 390.47566pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2823--2834
+Underfull \hbox (badness 10000) in paragraph at lines 2641--2652
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2835--2846
+Underfull \hbox (badness 10000) in paragraph at lines 2653--2664
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 2884--2884
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2708--2708
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 2914--2914
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2708--2708
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2708--2708
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2717--2718
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2723--2724
+[][][][][][][] 
+ []
+
+<codebook_template_files/figure-latex/q7_33_rainplot-1.pdf, id=113, 385.44pt x 57.21375pt>
+File: codebook_template_files/figure-latex/q7_33_rainplot-1.pdf Graphic file (type pdf)
+<use codebook_template_files/figure-latex/q7_33_rainplot-1.pdf>
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_33_rainplot-1.pdf  used on input line 2776.
+(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2769--2780
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2781--2792
+[][][]
  []
 
 [9 <./codebook_template_files/figure-latex/q7_30_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_31_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_32_rainplot-1.pdf>]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2923--2924
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2836--2836
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2836--2836
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2836--2836
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2845--2846
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2929--2930
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_33_rainplot-1.pdf, id=151, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_33_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_33_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_33_rainplot-1.pdf  used on input line 2984.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2977--2988
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2989--3000
-[][][]
- []
-
-
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3038--3038
-[][][][][] 
- []
-
-
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3068--3068
-[][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3077--3078
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3083--3084
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2851--2852
 [][][][][][][] 
  []
 
 <codebook_template_files/figure-latex/q7_34_rainplot-1.pdf, id=152, 390.45876pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_34_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_34_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_34_rainplot-1.pdf  used on input line 3138.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_34_rainplot-1.pdf  used on input line 2904.
 (pdftex.def)             Requested size: 390.47566pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3131--3142
+Underfull \hbox (badness 10000) in paragraph at lines 2897--2908
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3143--3154
+Underfull \hbox (badness 10000) in paragraph at lines 2909--2920
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3192--3192
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 2964--2964
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3222--3222
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 2964--2964
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3231--3232
+Overfull \hbox (140.5979pt too wide) in alignment at lines 2964--2964
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2973--2974
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3237--3238
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2979--2980
 [][][][][][][] 
  []
 
 <codebook_template_files/figure-latex/q7_35_rainplot-1.pdf, id=153, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_35_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_35_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_35_rainplot-1.pdf  used on input line 3292.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_35_rainplot-1.pdf  used on input line 3032.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3285--3296
-[][][]
- []
-
-[10 <./codebook_template_files/figure-latex/q7_33_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_34_rainplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 3297--3308
+Underfull \hbox (badness 10000) in paragraph at lines 3025--3036
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3346--3346
-[][][][][] 
+Underfull \hbox (badness 10000) in paragraph at lines 3037--3048
+[][][]
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3376--3376
-[][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3092--3092
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3385--3386
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3092--3092
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3092--3092
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3101--3102
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3391--3392
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3107--3108
 [][][][][][][] 
  []
 
-<codebook_template_files/figure-latex/q7_36_rainplot-1.pdf, id=180, 385.44pt x 57.21375pt>
+<codebook_template_files/figure-latex/q7_36_rainplot-1.pdf, id=154, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_36_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_36_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_36_rainplot-1.pdf  used on input line 3446.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_36_rainplot-1.pdf  used on input line 3160.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3439--3450
+Underfull \hbox (badness 10000) in paragraph at lines 3153--3164
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3451--3462
+Underfull \hbox (badness 10000) in paragraph at lines 3165--3176
 [][][]
  []
 
-
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3500--3500
-[][][][][] 
+[10 <./codebook_template_files/figure-latex/q7_33_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_34_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_35_rainplot-1.pdf>]
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3220--3220
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3530--3530
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3220--3220
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3539--3540
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3220--3220
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3229--3230
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3545--3546
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3235--3236
 [][][][][][][] 
  []
 
-<codebook_template_files/figure-latex/q7_37_rainplot-1.pdf, id=181, 385.44pt x 57.21375pt>
+<codebook_template_files/figure-latex/q7_37_rainplot-1.pdf, id=192, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_37_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_37_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_37_rainplot-1.pdf  used on input line 3599.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_37_rainplot-1.pdf  used on input line 3287.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3592--3603
+Underfull \hbox (badness 10000) in paragraph at lines 3280--3291
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3604--3615
+Underfull \hbox (badness 10000) in paragraph at lines 3292--3303
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3653--3653
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3347--3347
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3683--3683
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3347--3347
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3692--3693
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3347--3347
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3356--3357
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3698--3699
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3362--3363
 [][][][][][][] 
  []
 
-[11 <./codebook_template_files/figure-latex/q7_35_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_36_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_37_rainplot-1.pdf>]
-<codebook_template_files/figure-latex/q7_38_rainplot-1.pdf, id=219, 385.44pt x 57.21375pt>
+<codebook_template_files/figure-latex/q7_38_rainplot-1.pdf, id=193, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_38_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_38_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_38_rainplot-1.pdf  used on input line 3753.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_38_rainplot-1.pdf  used on input line 3415.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3746--3757
+Underfull \hbox (badness 10000) in paragraph at lines 3408--3419
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3758--3769
+Underfull \hbox (badness 10000) in paragraph at lines 3420--3431
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3807--3807
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3475--3475
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3837--3837
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3475--3475
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3846--3847
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3475--3475
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3484--3485
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3852--3853
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3490--3491
 [][][][][][][] 
  []
 
-<codebook_template_files/figure-latex/q7_39_rainplot-1.pdf, id=220, 385.44pt x 57.21375pt>
+<codebook_template_files/figure-latex/q7_39_rainplot-1.pdf, id=194, 385.44pt x 57.21375pt>
 File: codebook_template_files/figure-latex/q7_39_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/q7_39_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_39_rainplot-1.pdf  used on input line 3907.
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_39_rainplot-1.pdf  used on input line 3543.
 (pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3900--3911
+Underfull \hbox (badness 10000) in paragraph at lines 3536--3547
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3912--3923
+Underfull \hbox (badness 10000) in paragraph at lines 3548--3559
+[][][]
+ []
+
+[11 <./codebook_template_files/figure-latex/q7_36_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_37_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_38_rainplot-1.pdf>]
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3603--3603
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3603--3603
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3603--3603
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3612--3613
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3618--3619
+[][][][][][][] 
+ []
+
+<codebook_template_files/figure-latex/q7_40_rainplot-1.pdf, id=232, 385.44pt x 57.21375pt>
+File: codebook_template_files/figure-latex/q7_40_rainplot-1.pdf Graphic file (type pdf)
+<use codebook_template_files/figure-latex/q7_40_rainplot-1.pdf>
+Package pdftex.def Info: codebook_template_files/figure-latex/q7_40_rainplot-1.pdf  used on input line 3670.
+(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3663--3674
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 3961--3961
-[][][][][] 
+Underfull \hbox (badness 10000) in paragraph at lines 3675--3686
+[][][]
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 3991--3991
-[][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3730--3730
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3730--3730
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3730--3730
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3739--3740
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3745--3746
+[][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3791--3802
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3803--3814
+[][][]
+ []
+
+
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3858--3858
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3858--3858
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3858--3858
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3867--3868
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3873--3874
+[][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3918--3929
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3930--3941
+[][][]
+ []
+
+
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 3985--3985
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 3985--3985
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (140.5979pt too wide) in alignment at lines 3985--3985
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 3994--3995
+[][][][][][][] 
  []
 
 
@@ -1771,257 +1948,208 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 4000--4001
 [][][][][][][] 
  []
 
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4006--4007
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_40_rainplot-1.pdf, id=221, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_40_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_40_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_40_rainplot-1.pdf  used on input line 4060.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4053--4064
+[12 <./codebook_template_files/figure-latex/q7_39_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_40_rainplot-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 4046--4057
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4065--4076
+Underfull \hbox (badness 10000) in paragraph at lines 4058--4069
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 4114--4114
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 4113--4113
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 4144--4144
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 4113--4113
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4153--4154
+Overfull \hbox (140.5979pt too wide) in alignment at lines 4113--4113
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4122--4123
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4159--4160
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4128--4129
 [][][][][][][] 
  []
 
-[12 <./codebook_template_files/figure-latex/q7_38_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_39_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_40_rainplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 4207--4218
+
+Underfull \hbox (badness 10000) in paragraph at lines 4174--4185
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4219--4230
+Underfull \hbox (badness 10000) in paragraph at lines 4186--4197
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 4268--4268
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 4241--4241
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 4298--4298
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 4241--4241
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4307--4308
+Overfull \hbox (140.5979pt too wide) in alignment at lines 4241--4241
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4250--4251
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4313--4314
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4256--4257
 [][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4360--4371
+Underfull \hbox (badness 10000) in paragraph at lines 4303--4314
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4372--4383
+Underfull \hbox (badness 10000) in paragraph at lines 4315--4326
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 4421--4421
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 4370--4370
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 4451--4451
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 4370--4370
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4460--4461
+Overfull \hbox (140.5979pt too wide) in alignment at lines 4370--4370
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4379--4380
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4466--4467
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4385--4386
 [][][][][][][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 4514--4525
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4526--4537
-[][][]
- []
-
-
-Overfull \hbox (66.01187pt too wide) in alignment at lines 4575--4575
-[][][][][] 
- []
-
-
-Overfull \hbox (52.99997pt too wide) in alignment at lines 4605--4605
-[][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4614--4615
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4620--4621
-[][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4668--4679
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4680--4691
-[][][]
- []
-
-
-Overfull \hbox (66.01187pt too wide) in alignment at lines 4729--4729
-[][][][][] 
- []
-
-
-Overfull \hbox (52.99997pt too wide) in alignment at lines 4759--4759
-[][][][] 
- []
-
-[13]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4768--4769
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4774--4775
-[][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4821--4832
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4833--4844
-[][][]
- []
-
-
-Overfull \hbox (66.01187pt too wide) in alignment at lines 4882--4882
-[][][][][] 
- []
-
-
-Overfull \hbox (52.99997pt too wide) in alignment at lines 4912--4912
-[][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4921--4922
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4927--4928
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/parent_index_rainplot-1.pdf, id=264, 385.44pt x 58.2175pt>
+<codebook_template_files/figure-latex/parent_index_rainplot-1.pdf, id=260, 385.44pt x 58.2175pt>
 File: codebook_template_files/figure-latex/parent_index_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/parent_index_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/parent_index_rainplot-1.pdf  used on input line 4980.
+Package pdftex.def Info: codebook_template_files/figure-latex/parent_index_rainplot-1.pdf  used on input line 4436.
 (pdftex.def)             Requested size: 385.4508pt x 58.21912pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4973--4984
+Underfull \hbox (badness 10000) in paragraph at lines 4429--4440
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4985--4996
+Underfull \hbox (badness 10000) in paragraph at lines 4441--4452
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 5034--5034
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 4494--4494
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 5064--5064
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 4494--4494
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 5073--5074
+Overfull \hbox (84.00592pt too wide) in alignment at lines 4494--4494
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 5079--5080
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4503--4504
 [][][][][][][] 
  []
 
-<codebook_template_files/figure-latex/submission_id_rainplot-1.pdf, id=265, 385.44pt x 58.2175pt>
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4509--4510
+[][][][][][][] 
+ []
+
+[13 <./codebook_template_files/figure-latex/parent_index_rainplot-1.pdf>]
+<codebook_template_files/figure-latex/submission_id_rainplot-1.pdf, id=276, 385.44pt x 58.2175pt>
 File: codebook_template_files/figure-latex/submission_id_rainplot-1.pdf Graphic file (type pdf)
 <use codebook_template_files/figure-latex/submission_id_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/submission_id_rainplot-1.pdf  used on input line 5132.
+Package pdftex.def Info: codebook_template_files/figure-latex/submission_id_rainplot-1.pdf  used on input line 4560.
 (pdftex.def)             Requested size: 385.4508pt x 58.21912pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5125--5136
+Underfull \hbox (badness 10000) in paragraph at lines 4553--4564
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5137--5148
+Underfull \hbox (badness 10000) in paragraph at lines 4565--4576
 [][][]
  []
 
 
-Overfull \hbox (66.01187pt too wide) in alignment at lines 5186--5186
-[][][][][] 
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/bx/n/10 Invalid[] 
  []
 
 
-Overfull \hbox (52.99997pt too wide) in alignment at lines 5216--5216
-[][][][] 
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/bx/n/10 Median[] 
  []
 
-[14 <./codebook_template_files/figure-latex/parent_index_rainplot-1.pdf> <./codebook_template_files/figure-latex/submission_id_rainplot-1.pdf>] [15] (./codebook_template.aux)
+
+Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/m/n/10 169457927[] 
+ []
+
+
+Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/m/n/10 170477498[] 
+ []
+
+
+Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/m/n/10 178998706[] 
+ []
+
+
+Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/m/n/10 181313451[] 
+ []
+
+
+Overfull \hbox (6.40802pt too wide) in paragraph at lines 4618--4618
+ [][]\T1/lmr/m/n/10 183208932[] 
+ []
+
+
+Overfull \hbox (84.00592pt too wide) in alignment at lines 4618--4618
+[][][][][][][] 
+ []
+
+[14 <./codebook_template_files/figure-latex/submission_id_rainplot-1.pdf>] (./codebook_template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2029,18 +2157,18 @@ Package rerunfilecheck Info: File `codebook_template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16468 strings out of 477031
- 314573 string characters out of 5826633
+ 16467 strings out of 477031
+ 314566 string characters out of 5826633
  775150 words of memory out of 5000000
  37336 multiletter control sequences out of 15000+600000
  493937 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,14n,77p,430b,935s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on codebook_template.pdf (16 pages, 484168 bytes).
+Output written on codebook_template.pdf (15 pages, 474943 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 239 compressed objects within 3 object streams
- 17 named destinations out of 1000 (max. 500000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
+ 16 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -123,6 +123,7 @@ meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/meta
 # global options 
 options(huxtable.bookdown = T)
 options(knitr.duplicate.label = "allow")
+options(scipen=999)
 
 ```
 
@@ -274,6 +275,11 @@ variable_labels = meta_data$var_label[130:162]
 
 # generate the info for the first wave of variables
 test_vars = c("q001","q002a","q0_0","q0_5a","q0_12_7","cnum","q4_30_2","q4_33","today")
+
+# dataset = rbind(dataset,rep(NA,38))
+# dataset = rbind(dataset,rep(NA,38))
+# dataset = rbind(dataset,rep(NA,38))
+# dataset = rbind(dataset,rep(NA,38))
 
 variable_names = meta_data$var_name
 

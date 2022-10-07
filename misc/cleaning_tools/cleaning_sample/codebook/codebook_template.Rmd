@@ -113,8 +113,8 @@ knit_function = function(knit_object){
 }
 
 
-dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/roster_mod7_16.rds")
-meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/metadata_roster_mod7_16.rds"
+dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
+meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/meta_data.rds"
 
 # define exactly where the meta file is located 
 # meta_path = "../meta_files/meta_data.rds"
@@ -281,7 +281,8 @@ test_vars = c("q001","q002a","q0_0","q0_5a","q0_12_7","cnum","q4_30_2","q4_33","
 # dataset = rbind(dataset,rep(NA,38))
 # dataset = rbind(dataset,rep(NA,38))
 
-variable_names = meta_data$var_name
+variable_names = meta_data$var_name[1:20]
+# variable_names = "q002a"
 
 list_to_knit = lapply(
   variable_names,

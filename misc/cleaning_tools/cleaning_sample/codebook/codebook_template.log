@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.3)  4 OCT 2022 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.7)  7 OCT 2022 09:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -219,7 +219,7 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count274
 \c@continuedfloat=\count275
 ) (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
-Package: siunitx 2022-09-07 v3.1.7 A comprehensive (SI) units package
+Package: siunitx 2022-10-04 v3.1.8 A comprehensive (SI) units package
 \l__siunitx_angle_tmp_dim=\dimen170
 \l__siunitx_angle_marker_box=\box55
 \l__siunitx_angle_unit_box=\box56
@@ -506,7 +506,23 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count324
 \l__pdf_internal_box=\box79
-) (./codebook_template.aux)
+) (./codebook_template.aux
+
+LaTeX Warning: Label `q001_1' multiply defined.
+
+
+LaTeX Warning: Label `q002' multiply defined.
+
+
+LaTeX Warning: Label `q002' multiply defined.
+
+
+LaTeX Warning: Label `q002a' multiply defined.
+
+
+LaTeX Warning: Label `q0_8a' multiply defined.
+
+)
 \openout1 = `codebook_template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
@@ -655,107 +671,43 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
 
-LaTeX Warning: Reference `help_pos' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_9' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_26' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_3' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_27' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_4' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_28' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_5' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_29' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_6' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_30' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_7' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_31' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_8' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_32' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_9' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_33' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_10' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_34' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_11' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_35' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_12_12' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_36' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_13' on page 1 undefined on input line 424.
 
 
-LaTeX Warning: Reference `q7_37' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_38' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_39' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_40' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_41' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_42' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_43' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_44' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `q7_45' on page 1 undefined on input line 424.
-
-
-Overfull \hbox (5.55252pt too wide) in paragraph at lines 424--424
-[][]\T1/lmr/m/n/10 parent_index[]  
- []
-
-
-LaTeX Warning: Reference `parent_index' on page 1 undefined on input line 424.
-
-
-Overfull \hbox (9.5796pt too wide) in paragraph at lines 424--424
-[][]\T1/lmr/m/n/10 submission_id[]  
- []
-
-
-LaTeX Warning: Reference `submission_id' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
-
-
-LaTeX Warning: Reference `NA' on page 1 undefined on input line 424.
+LaTeX Warning: Reference `q0_14_1' on page 1 undefined on input line 424.
 
 
 Overfull \hbox (40.0pt too wide) in alignment at lines 424--424
@@ -763,115 +715,103 @@ Overfull \hbox (40.0pt too wide) in alignment at lines 424--424
  []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.708 \end{tabularx}
-                     [1
+LaTeX Warning: Reference `q0_14_2' on page 1 undefined on input line 708.
 
 
-]
-Overfull \vbox (369.88678pt too high) has occurred while \output is active []
+LaTeX Warning: Reference `q0_14_3' on page 1 undefined on input line 708.
 
-[2]
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_11' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_11a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_12' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_12a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_13' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_13a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_14' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_14a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_15' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_15a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_16' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_16a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_17' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_17a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_18' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_19' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_19a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_1' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_2' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_3' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_4' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_5' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_6' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_7' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_8' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_9' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_10' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20_11' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_20a' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_21' on page 1 undefined on input line 708.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
-
-
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
-
-
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 708.
+LaTeX Warning: Reference `q1_22_1' on page 1 undefined on input line 708.
 
 
 Overfull \hbox (40.0pt too wide) in alignment at lines 708--708
@@ -879,314 +819,335 @@ Overfull \hbox (40.0pt too wide) in alignment at lines 708--708
  []
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.992 \end{tabularx}
+                     [1
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+]
+Overfull \vbox (97.98682pt too high) has occurred while \output is active []
 
+[2]
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_2' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_3' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_4' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_5' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_6' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_7' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_8' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_9' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_10' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_11' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_12' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_13' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_14' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_15' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_22_16' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `local_num' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_26' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_26a' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_27' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q1_27a' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_0' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_20' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_1' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_2' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_3' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_4' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_5' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_6' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_7' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_8' on page 3 undefined on input line 992.
 
 
-LaTeX Warning: Reference `NA' on page 3 undefined on input line 992.
+LaTeX Warning: Reference `q2_21_9' on page 3 undefined on input line 992.
+
+
+LaTeX Warning: Reference `q2_21a' on page 3 undefined on input line 992.
+
+
+LaTeX Warning: Reference `cnum' on page 3 undefined on input line 992.
 
 
 Overfull \hbox (40.0pt too wide) in alignment at lines 992--992
 [][][] 
  []
 
+
+Overfull \vbox (229.98682pt too high) has occurred while \output is active []
+
 [3]
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_1' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_2' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_3' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_4' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_5' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_6' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_7' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_8' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_9' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25_10' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_25a' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `event_num' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_1' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_2' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_3' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_4' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_5' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_6' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_7' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_8' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_9' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_10' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_11' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_12' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_13' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_14' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_15' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_16' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28_17' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_28a' on page 4 undefined on input line 1260.
 
 
-LaTeX Warning: Reference `NA' on page 4 undefined on input line 1260.
+LaTeX Warning: Reference `q2_29_1' on page 4 undefined on input line 1260.
 
 
 Overfull \hbox (40.0pt too wide) in alignment at lines 1260--1260
 [][][] 
  []
 
+
+Overfull \vbox (317.78674pt too high) has occurred while \output is active []
+
 [4]
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_2' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_3' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_4' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_5' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_6' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_7' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_8' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_9' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_10' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29_11' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q2_29a' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_1' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_2' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_3' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_4' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_5' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_6' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_7' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_8' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_9' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_10' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_11' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_12' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_13' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_14' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_15' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_16' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_17' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1_18' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_1a' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `aassetnum' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_6_1' on page 5 undefined on input line 1544.
 
 
-LaTeX Warning: Reference `NA' on page 5 undefined on input line 1544.
+LaTeX Warning: Reference `q3_6_2' on page 5 undefined on input line 1544.
 
 
 Overfull \hbox (40.0pt too wide) in alignment at lines 1544--1544
 [][][] 
  []
 
-[5] [6]
+
+Overfull \vbox (313.98682pt too high) has occurred while \output is active []
+
+[5]
 Overfull \hbox (6.0pt too wide) in paragraph at lines 1554--1555
 [][][][][][][] 
  []
@@ -1196,979 +1157,620 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 1560--1561
 [][][][][][][] 
  []
 
-<codebook_template_files/figure-latex/help_pos_rainplot-1.pdf, id=42, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/help_pos_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/help_pos_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/help_pos_rainplot-1.pdf  used on input line 1613.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1606--1617
+Overfull \hbox (24.0pt too wide) in alignment at lines 1637--1637
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1604--1641
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1618--1629
+Overfull \hbox (0.64279pt too wide) in paragraph at lines 1679--1679
+ [][]\T1/lmr/m/n/10 date_format[] 
+ []
+
+
+Overfull \hbox (59.994pt too wide) in alignment at lines 1679--1679
+[][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1688--1689
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1694--1695
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.00595pt too wide) in alignment at lines 1791--1791
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1740--1795
 [][][]
  []
 
 
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 1671--1671
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 1671--1671
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (84.00592pt too wide) in alignment at lines 1671--1671
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1680--1681
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1686--1687
-[][][][][][][] 
- []
-
-
-Overfull \hbox (47.99998pt too wide) in alignment at lines 1760--1760
-[][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1732--1764
-[][][]
- []
-
-
-Overfull \hbox (3.65065pt too wide) in paragraph at lines 1810--1810
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 1839--1839
 [][]\T1/lmr/bx/n/10 Invalid[]  
  []
 
 
-Overfull \hbox (7.21086pt too wide) in paragraph at lines 1810--1810
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 1839--1839
 [][]\T1/lmr/bx/n/10 Median[]  
  []
 
 
-Overfull \hbox (0.84596pt too wide) in paragraph at lines 1810--1810
+Overfull \hbox (95.99997pt too wide) in alignment at lines 1839--1839
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1848--1849
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1854--1855
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (35.99402pt too wide) in alignment at lines 2007--2007
+[][][] 
+ []
+
+
+Overfull \hbox (35.99402pt too wide) in alignment at lines 2158--2158
+[][][] 
+ []
+
+[6
+
+]
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 2205--2205
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 2205--2205
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (95.99997pt too wide) in alignment at lines 2205--2205
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2214--2215
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 2220--2221
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (35.99402pt too wide) in alignment at lines 2373--2373
+[][][] 
+ []
+
+
+Overfull \hbox (35.99402pt too wide) in alignment at lines 2596--2596
+[][][] 
+ []
+
+[7]
+Overfull \hbox (35.99402pt too wide) in alignment at lines 4131--4131
+[][][] 
+ []
+
+[8]
+Overfull \vbox (1754.44237pt too high) has occurred while \output is active []
+
+[9]
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 4178--4178
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 4178--4178
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (95.99997pt too wide) in alignment at lines 4178--4178
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4187--4188
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 4193--4194
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.0pt too wide) in alignment at lines 4344--4344
+[][][] 
+ []
+
+
+Overfull \hbox (36.0pt too wide) in alignment at lines 5055--5055
+[][][] 
+ []
+
+[10]
+Overfull \vbox (405.1386pt too high) has occurred while \output is active []
+
+[11]
+Overfull \hbox (47.98807pt too wide) in alignment at lines 5094--5094
+[][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5103--5104
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5109--5110
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 5186--5186
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5153--5190
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5196--5197
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5202--5203
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.00595pt too wide) in alignment at lines 5283--5283
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5248--5287
+[][][]
+ []
+
+
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 5331--5331
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 5331--5331
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (95.99997pt too wide) in alignment at lines 5331--5331
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5340--5341
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5346--5347
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.00595pt too wide) in alignment at lines 5443--5443
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5392--5447
+[][][]
+ []
+
+
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 5491--5491
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 5491--5491
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (95.99997pt too wide) in alignment at lines 5491--5491
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5500--5501
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5506--5507
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 5583--5583
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5550--5587
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5593--5594
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5599--5600
+[][][][][][][] 
+ []
+
+[12]
+Overfull \hbox (23.99998pt too wide) in alignment at lines 5676--5676
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5643--5680
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5686--5687
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5692--5693
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 5771--5771
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5738--5775
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5781--5782
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5787--5788
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 5866--5866
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5833--5870
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5876--5877
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5882--5883
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 5961--5961
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5928--5965
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5971--5972
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 5977--5978
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.0pt too wide) in alignment at lines 6136--6136
+[][][] 
+ []
+
+[13]
+Overfull \hbox (36.0pt too wide) in alignment at lines 10463--10463
+[][][] 
+ []
+
+[14]
+Overfull \vbox (6326.35515pt too high) has occurred while \output is active []
+
+[15]
+Overfull \hbox (35.99405pt too wide) in alignment at lines 10500--10500
+[][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10509--10510
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10515--10516
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 10592--10592
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10559--10596
+[][][]
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10602--10603
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10608--10609
+[][][][][][][] 
+ []
+
+<codebook_template_files/figure-latex/q0_9_rainplot-1.pdf, id=157, 385.44pt x 58.2175pt>
+File: codebook_template_files/figure-latex/q0_9_rainplot-1.pdf Graphic file (type pdf)
+<use codebook_template_files/figure-latex/q0_9_rainplot-1.pdf>
+Package pdftex.def Info: codebook_template_files/figure-latex/q0_9_rainplot-1.pdf  used on input line 10662.
+(pdftex.def)             Requested size: 385.4508pt x 58.21912pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10655--10666
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10667--10678
+[][][]
+ []
+
+
+Overfull \hbox (1.63719pt too wide) in paragraph at lines 10720--10720
+ [][]\T1/lmr/bx/n/10 Invalid[] 
+ []
+
+
+Overfull \hbox (5.1974pt too wide) in paragraph at lines 10720--10720
+ [][]\T1/lmr/bx/n/10 Median[] 
+ []
+
+
+Overfull \hbox (84.00592pt too wide) in alignment at lines 10720--10720
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10729--10730
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10735--10736
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.00595pt too wide) in alignment at lines 10872--10872
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10781--10876
+[][][]
+ []
+
+
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 10920--10920
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 10920--10920
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (95.99997pt too wide) in alignment at lines 10920--10920
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10929--10930
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 10935--10936
+[][][][][][][] 
+ []
+
+[16 <./codebook_template_files/figure-latex/q0_9_rainplot-1.pdf>]
+Overfull \hbox (36.00595pt too wide) in alignment at lines 11024--11024
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10981--11028
+[][][]
+ []
+
+
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 11072--11072
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 11072--11072
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (95.99997pt too wide) in alignment at lines 11072--11072
+[][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 11081--11082
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 11087--11088
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (36.00595pt too wide) in alignment at lines 11176--11176
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11133--11180
+[][][]
+ []
+
+
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 11226--11226
+[][]\T1/lmr/bx/n/10 Invalid[]  
+ []
+
+
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 11226--11226
+[][]\T1/lmr/bx/n/10 Median[]  
+ []
+
+
+Overfull \hbox (0.84596pt too wide) in paragraph at lines 11226--11226
 [][]\T1/lmr/bx/n/10 NA's[]  
  []
 
 
-Overfull \hbox (144.57849pt too wide) in alignment at lines 1810--1810
+Overfull \hbox (144.57849pt too wide) in alignment at lines 11226--11226
 [][][][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1819--1820
+Overfull \hbox (6.0pt too wide) in paragraph at lines 11235--11236
 [][][][][][][] 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1825--1826
+Overfull \hbox (6.0pt too wide) in paragraph at lines 11241--11242
 [][][][][][][] 
  []
 
-<codebook_template_files/figure-latex/q7_26_rainplot-1.pdf, id=43, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_26_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_26_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_26_rainplot-1.pdf  used on input line 1880.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1873--1884
+Overfull \hbox (36.00595pt too wide) in alignment at lines 11330--11330
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11287--11334
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1885--1896
-[][][]
+Overfull \hbox (3.65065pt too wide) in paragraph at lines 11380--11380
+[][]\T1/lmr/bx/n/10 Invalid[]  
  []
 
 
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 1940--1940
- [][]\T1/lmr/bx/n/10 Invalid[] 
+Overfull \hbox (7.21086pt too wide) in paragraph at lines 11380--11380
+[][]\T1/lmr/bx/n/10 Median[]  
  []
 
 
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 1940--1940
- [][]\T1/lmr/bx/n/10 Median[] 
+Overfull \hbox (0.84596pt too wide) in paragraph at lines 11380--11380
+[][]\T1/lmr/bx/n/10 NA's[]  
  []
 
 
-Overfull \hbox (140.5979pt too wide) in alignment at lines 1940--1940
-[][][][][][][][] 
+Overfull \hbox (144.57849pt too wide) in alignment at lines 11380--11380
+[][][][][][][][][] 
  []
 
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1949--1950
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1955--1956
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_27_rainplot-1.pdf, id=44, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_27_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_27_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_27_rainplot-1.pdf  used on input line 2008.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2001--2012
-[][][]
- []
-
-[7
-
- <./codebook_template_files/figure-latex/help_pos_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_26_rainplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 2013--2024
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2068--2068
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2068--2068
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2068--2068
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2077--2078
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2083--2084
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_28_rainplot-1.pdf, id=71, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_28_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_28_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_28_rainplot-1.pdf  used on input line 2136.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2129--2140
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2141--2152
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2196--2196
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2196--2196
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2196--2196
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2205--2206
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2211--2212
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_29_rainplot-1.pdf, id=72, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_29_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_29_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_29_rainplot-1.pdf  used on input line 2264.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2257--2268
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2269--2280
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2324--2324
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2324--2324
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2324--2324
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2333--2334
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2339--2340
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_30_rainplot-1.pdf, id=73, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_30_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_30_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_30_rainplot-1.pdf  used on input line 2392.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2385--2396
-[][][]
- []
-
-[8 <./codebook_template_files/figure-latex/q7_27_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_28_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_29_rainplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 2397--2408
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2452--2452
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2452--2452
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2452--2452
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2461--2462
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2467--2468
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_31_rainplot-1.pdf, id=111, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_31_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_31_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_31_rainplot-1.pdf  used on input line 2520.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2513--2524
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2525--2536
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2580--2580
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2580--2580
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2580--2580
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2589--2590
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2595--2596
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_32_rainplot-1.pdf, id=112, 390.45876pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_32_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_32_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_32_rainplot-1.pdf  used on input line 2648.
-(pdftex.def)             Requested size: 390.47566pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2641--2652
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2653--2664
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2708--2708
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2708--2708
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2708--2708
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2717--2718
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2723--2724
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_33_rainplot-1.pdf, id=113, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_33_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_33_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_33_rainplot-1.pdf  used on input line 2776.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2769--2780
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2781--2792
-[][][]
- []
-
-[9 <./codebook_template_files/figure-latex/q7_30_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_31_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_32_rainplot-1.pdf>]
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2836--2836
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2836--2836
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2836--2836
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2845--2846
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2851--2852
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_34_rainplot-1.pdf, id=152, 390.45876pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_34_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_34_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_34_rainplot-1.pdf  used on input line 2904.
-(pdftex.def)             Requested size: 390.47566pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2897--2908
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2909--2920
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 2964--2964
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 2964--2964
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 2964--2964
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2973--2974
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 2979--2980
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_35_rainplot-1.pdf, id=153, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_35_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_35_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_35_rainplot-1.pdf  used on input line 3032.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3025--3036
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3037--3048
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3092--3092
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3092--3092
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3092--3092
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3101--3102
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3107--3108
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_36_rainplot-1.pdf, id=154, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_36_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_36_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_36_rainplot-1.pdf  used on input line 3160.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3153--3164
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3165--3176
-[][][]
- []
-
-[10 <./codebook_template_files/figure-latex/q7_33_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_34_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_35_rainplot-1.pdf>]
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3220--3220
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3220--3220
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3220--3220
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3229--3230
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3235--3236
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_37_rainplot-1.pdf, id=192, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_37_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_37_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_37_rainplot-1.pdf  used on input line 3287.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3280--3291
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3292--3303
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3347--3347
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3347--3347
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3347--3347
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3356--3357
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3362--3363
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_38_rainplot-1.pdf, id=193, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_38_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_38_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_38_rainplot-1.pdf  used on input line 3415.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3408--3419
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3420--3431
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3475--3475
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3475--3475
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3475--3475
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3484--3485
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3490--3491
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_39_rainplot-1.pdf, id=194, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_39_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_39_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_39_rainplot-1.pdf  used on input line 3543.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3536--3547
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3548--3559
-[][][]
- []
-
-[11 <./codebook_template_files/figure-latex/q7_36_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_37_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_38_rainplot-1.pdf>]
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3603--3603
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3603--3603
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3603--3603
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3612--3613
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3618--3619
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/q7_40_rainplot-1.pdf, id=232, 385.44pt x 57.21375pt>
-File: codebook_template_files/figure-latex/q7_40_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/q7_40_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/q7_40_rainplot-1.pdf  used on input line 3670.
-(pdftex.def)             Requested size: 385.4567pt x 57.2162pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3663--3674
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3675--3686
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3730--3730
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3730--3730
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3730--3730
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3739--3740
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3745--3746
-[][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3791--3802
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3803--3814
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3858--3858
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3858--3858
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3858--3858
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3867--3868
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3873--3874
-[][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3918--3929
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3930--3941
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 3985--3985
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 3985--3985
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 3985--3985
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 3994--3995
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4000--4001
-[][][][][][][] 
- []
-
-[12 <./codebook_template_files/figure-latex/q7_39_rainplot-1.pdf> <./codebook_template_files/figure-latex/q7_40_rainplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 4046--4057
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4058--4069
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 4113--4113
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 4113--4113
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 4113--4113
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4122--4123
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4128--4129
-[][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4174--4185
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4186--4197
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 4241--4241
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 4241--4241
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 4241--4241
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4250--4251
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4256--4257
-[][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4303--4314
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4315--4326
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 4370--4370
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 4370--4370
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (140.5979pt too wide) in alignment at lines 4370--4370
-[][][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4379--4380
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4385--4386
-[][][][][][][] 
- []
-
-<codebook_template_files/figure-latex/parent_index_rainplot-1.pdf, id=260, 385.44pt x 58.2175pt>
-File: codebook_template_files/figure-latex/parent_index_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/parent_index_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/parent_index_rainplot-1.pdf  used on input line 4436.
-(pdftex.def)             Requested size: 385.4508pt x 58.21912pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4429--4440
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4441--4452
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 4494--4494
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 4494--4494
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (84.00592pt too wide) in alignment at lines 4494--4494
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4503--4504
-[][][][][][][] 
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 4509--4510
-[][][][][][][] 
- []
-
-[13 <./codebook_template_files/figure-latex/parent_index_rainplot-1.pdf>]
-<codebook_template_files/figure-latex/submission_id_rainplot-1.pdf, id=276, 385.44pt x 58.2175pt>
-File: codebook_template_files/figure-latex/submission_id_rainplot-1.pdf Graphic file (type pdf)
-<use codebook_template_files/figure-latex/submission_id_rainplot-1.pdf>
-Package pdftex.def Info: codebook_template_files/figure-latex/submission_id_rainplot-1.pdf  used on input line 4560.
-(pdftex.def)             Requested size: 385.4508pt x 58.21912pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4553--4564
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4565--4576
-[][][]
- []
-
-
-Overfull \hbox (1.63719pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/bx/n/10 Invalid[] 
- []
-
-
-Overfull \hbox (5.1974pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/bx/n/10 Median[] 
- []
-
-
-Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/m/n/10 169457927[] 
- []
-
-
-Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/m/n/10 170477498[] 
- []
-
-
-Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/m/n/10 178998706[] 
- []
-
-
-Overfull \hbox (12.40802pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/m/n/10 181313451[] 
- []
-
-
-Overfull \hbox (6.40802pt too wide) in paragraph at lines 4618--4618
- [][]\T1/lmr/m/n/10 183208932[] 
- []
-
-
-Overfull \hbox (84.00592pt too wide) in alignment at lines 4618--4618
-[][][][][][][] 
- []
-
-[14 <./codebook_template_files/figure-latex/submission_id_rainplot-1.pdf>] (./codebook_template.aux)
+[17] (./codebook_template.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `codebook_template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16467 strings out of 477031
- 314566 string characters out of 5826633
- 775150 words of memory out of 5000000
- 37336 multiletter control sequences out of 15000+600000
+ 16477 strings out of 477031
+ 306754 string characters out of 5826633
+ 1969425 words of memory out of 5000000
+ 37337 multiletter control sequences out of 15000+600000
  493937 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,14n,77p,430b,935s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on codebook_template.pdf (15 pages, 474943 bytes).
+ 72i,14n,77p,397b,935s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/gavin/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on codebook_template.pdf (18 pages, 242029 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
- 16 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

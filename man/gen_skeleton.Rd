@@ -4,7 +4,7 @@
 \alias{gen_skeleton}
 \title{Title}
 \usage{
-gen_skeleton(dataset, skeleton_path)
+gen_skeleton(dataset, skeleton_path, store_data_path)
 }
 \arguments{
 \item{skeleton_path}{}

@@ -1,6 +1,6 @@
 # add directory
 
-  dataset = readRDS('/undead_army/dataset.rds')
+  dataset = readRDS('/clean_data/dataset.rds')
 
 
 

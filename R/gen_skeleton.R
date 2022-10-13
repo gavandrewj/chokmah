@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-gen_skeleton = function(dataset,skeleton_path){
+gen_skeleton = function(dataset,skeleton_path,store_data_path){
 
   file.create(
     skeleton_path
@@ -123,7 +123,9 @@ chokmah::clean_discrete(",dataset,"[['",var_name,"']]) \n\n\n"
         append = T
       )
 
-    } else if(meta_data$question_type[which(meta_data$var_name == var_name)] == "text"){
+    } else if(
+      meta_data$question_type[which(meta_data$var_name == var_name)] == "text" |
+      meta_data$question_type[which(meta_data$var_name == var_name)] == "date"){
 
 
       towrite = paste0(
@@ -261,8 +263,7 @@ chokmah::clean_continuous(",dataset,"[['",var_name,"']]) \n\n\n"
     )
 
 
-    saveRDS(",dataset,",'clean_main_data/cleaned_datafiles/",dataset,".rds')
-    "
+    saveRDS(",dataset,",'",paste0(store_data_path,"/",dataset,".rds"),"')"
   )
 
   readr::write_lines(

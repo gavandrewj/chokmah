@@ -12,6 +12,7 @@ gen_codetables = function(dataset,varname,meta_path){
 
   if(as.logical(meta_data[meta_data[['var_name']] == varname,"suppress_valtab"])){
 
+    # get the initial tabulation of all codes
     codes = table(dataset[[varname]]) |>
       as.matrix() |>
       as.data.frame()
@@ -19,6 +20,7 @@ gen_codetables = function(dataset,varname,meta_path){
     codes$value =  rownames(codes)
     rownames(codes) = NULL
 
+    # compute the frequency
     codes = codes |>
       dplyr::rename(
         freq = V1
@@ -28,6 +30,7 @@ gen_codetables = function(dataset,varname,meta_path){
         freq = paste(freq," (",round(freq/sum(freq,na.rm = T) * 100,1),"%",")",sep = "")
       )
 
+    # pull the valid codes and remove the counts from the invalid from the valid column
     invalid_codes = chokmah::invalid_code_finder(
       variable = varname,
       dataset = dataset,
@@ -37,86 +40,14 @@ gen_codetables = function(dataset,varname,meta_path){
 
     codes$valid[which(codes$value %in% invalid_codes)] = NA
 
+    # compute counts of valid and non-valid
     count_valid = sum(codes$valid,na.rm = T)
     count_invalid = nrow(dataset) - count_valid
 
 
-    codes = codes[which(codes$value %in% invalid_codes),]
-
-
-
-
-
-    if(!rlang::is_null(sjlabelled::get_values(dataset[[varname]]))){
-
-
-
-      codes_table = data.frame(
-        values = sjlabelled::get_values(dataset[[varname]]),
-        labels = sjlabelled::get_labels(dataset[[varname]])
-      )
-
-
-      codes$label = codes_table$labels[match(codes$value,codes_table$values)]
-
-
-
-
-      # if the var type is interval then remove the label column and rename label as the values
-
-      codes = codes |>
-        dplyr::relocate(
-          value,
-          .before  = "freq"
-        ) |>
-        dplyr::relocate(
-          label,
-          .after = "value"
-        ) |>
-        dplyr::rename(
-          Label = label,
-          Value = value,
-          Frequency = freq
-          ) |>
-        dplyr::select(
-          !valid
-        )
-
-    } else {
-
-      codes = codes |>
-        dplyr::relocate(
-          value,
-          .before  = "freq"
-        ) |>
-        dplyr::rename(
-          Label = value,
-          Frequency = freq,
-          "Valid %" = valid
-        )
-
-
-    }
-
- if(rlang::is_empty(codes$Label)){
-
-   codes = data.frame(
-     " " = "No Invalid codes"
-   ) |>
-     dplyr::rename(
-       " " = X.
-     )
-
- }
-
-
-    # neaten table by removing na and such
-    codes[is.na(codes)] = "-"
-    codes[codes == "NA%"] = "-"
-
-
   } else if(as.logical(meta_data[meta_data[['var_name']] == varname,"question_type"] == "text")){
 
+    # get the general tabulation
     codes = table(dataset[[varname]]) |>
       as.matrix() |>
       as.data.frame()
@@ -124,6 +55,7 @@ gen_codetables = function(dataset,varname,meta_path){
     codes$label =  rownames(codes)
     rownames(codes) = NULL
 
+    # compute the frequency
     codes = codes |>
       dplyr::rename(
         freq = V1
@@ -134,8 +66,7 @@ gen_codetables = function(dataset,varname,meta_path){
       )
 
 
-    # search for invalid codes
-
+    # search for invalid codes, remove the invalid counts from the valid column
     invalid_codes = chokmah::invalid_code_finder(
       variable = varname,
       dataset = dataset,
@@ -147,7 +78,7 @@ gen_codetables = function(dataset,varname,meta_path){
     codes$valid[which(codes$label %in% invalid_codes)] = NA
 
 
-
+    # compute the counts of valid and invalid
     count_valid = sum(codes$valid,na.rm = T)
     count_invalid = nrow(dataset) - count_valid
 
@@ -188,13 +119,7 @@ gen_codetables = function(dataset,varname,meta_path){
     as.logical(meta_data[meta_data[['var_name']] == varname,"question_type"] == "date")
     ){
 
-    invalid_codes = chokmah::invalid_code_finder(
-      variable = varname,
-      dataset = dataset,
-      meta_path = meta_path,
-      write_meta = T
-    )
-
+    # get the general tabulation
     codes = table(dataset[[varname]]) |>
       as.matrix() |>
       as.data.frame()
@@ -202,15 +127,68 @@ gen_codetables = function(dataset,varname,meta_path){
     codes$label =  rownames(codes)
     rownames(codes) = NULL
 
+    # compute the frequency
+    codes = codes |>
+      dplyr::rename(
+        freq = V1
+      ) |>
+      dplyr::mutate(
+        valid = freq,
+        freq = paste(freq," (",round(freq/sum(freq,na.rm = T) * 100,1),"%",")",sep = "")
+      )
 
-    count_invalid = sum(codes$V1[match(invalid_codes,codes$label)],na.rm = T)
-    count_valid = nrow(dataset) - sum(codes$V1[match(invalid_codes,codes$label)],na.rm = T)
 
-
-    codes = data.frame(
-      Valid = count_valid,
-      Invalid = count_invalid
+    # search for invalid codes, remove the invalid counts from the valid column
+    invalid_codes = chokmah::invalid_code_finder(
+      variable = varname,
+      dataset = dataset,
+      meta_path = meta_path,
+      write_meta = T
     )
+
+
+    codes$valid[which(codes$label %in% invalid_codes)] = NA
+
+
+    # compute the counts of valid and invalid
+    count_valid = sum(codes$valid,na.rm = T)
+    count_invalid = nrow(dataset) - count_valid
+
+    codes = codes |>
+      dplyr::mutate(
+        valid = paste(round(valid/sum(valid,na.rm = T) * 100,1),"%",sep = "")
+      )
+
+
+
+    # neaten table by removing na and such
+    codes[is.na(codes)] = "-"
+    codes[codes == "NA%"] = "-"
+    codes[codes == "."] = ". (M)"
+    codes[codes$value == -99 ,"valid"] = "-"
+    codes[codes$value == -1 ,"valid"] = "-"
+    codes[codes$value == -2 ,"valid"] = "-"
+    codes[codes$value == -3 ,"valid"] = "-"
+
+
+    # combine the freq and % columns and remove the percent column, rename the columns
+    codes = codes |>
+      dplyr::rename(
+        Label = label,
+        Frequency = freq,
+        # "%" = percent,
+        "Valid %" = valid
+      ) |> dplyr::relocate(
+        Label,
+        .before = Frequency
+      )
+
+    codes = codes[codes$Label %in% invalid_codes,] |>
+      dplyr::select(Label,Frequency)
+
+    # count_invalid = sum(codes$V1[match(invalid_codes,codes$label)],na.rm = T)
+    # count_valid = nrow(dataset) - sum(codes$V1[match(invalid_codes,codes$label)],na.rm = T)
+
 
 
     # add the format
@@ -219,21 +197,31 @@ gen_codetables = function(dataset,varname,meta_path){
 
 
     sum_tab = sum_data |>
+      tidyr::drop_na() |>
       timetk::tk_summary_diagnostics() |>
       dplyr::select(
         start,
         end,
-        units,
         tzone
       ) |>
       dplyr::mutate(
-        "Format" = 'date_format'
+        count_valid = count_valid,
+        count_invalid = count_invalid,
+        "Format" = 'YYYY-MM-DD',
+        tzone = meta_data[meta_data[['var_name']] == varname,"time_zone"] |> as.character()
       ) |>
       dplyr::rename(
         Start = start,
         End = end,
-        Units = units,
         "Time Zone" = tzone
+      ) |>
+      dplyr::relocate(
+        count_valid:count_invalid,
+        .before = Start
+      ) |>
+      dplyr::rename(
+        "Valid" = count_valid,
+        "Invalid" = count_invalid
       )
 
 
@@ -542,6 +530,10 @@ gen_codetables = function(dataset,varname,meta_path){
       dataset = data_set,
       varname = "sum_var"
     ) +
+      ggplot2::theme(
+        axis.ticks.y  = ggplot2::element_blank(),
+        axis.text.y = ggplot2::element_blank()) +
+
       if(sum(data_set$sum_var < 0,na.rm = T) != 0){
       ggplot2::scale_y_continuous(labels =  scales::comma,oob = scales::squish)
       } else {

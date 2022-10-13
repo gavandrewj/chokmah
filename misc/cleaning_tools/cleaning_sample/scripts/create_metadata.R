@@ -1,14 +1,14 @@
 # add directory name
 # run value label scripts
-source("/spellbook/tidy_reagents.R")
+source("/scripts/initial_cleaning.R")
 
-source("/spellbook/create_value_labels.R")
+source("/scripts/create_value_labels.R")
 
 
 # read in the value label script file
 # remove some basic noise rows
 basic_meta = readxl::read_excel(
-  path = "/spellbook/instrument_metadata.xlsx",
+  path = "/scripts/instrument_metadata.xlsx",
   sheet = 1
 ) |> tibble::tibble() |>
   dplyr::filter(
@@ -92,7 +92,7 @@ basic_meta = basic_meta |>
 
 saveRDS(
   basic_meta,
-  "/spellbook/base_meta_data.rds"
+  "/scripts/base_meta_data.rds"
 )
 
 
@@ -138,7 +138,7 @@ meta_data$var_label[which(meta_data$var_name == names)] = basic_meta$var_label[w
 rm(basic_meta)
 
 instrument_metadata <- readxl::read_excel(
-  "/spellbook/instrument_metadata.xlsx",
+  "/scripts/instrument_metadata.xlsx",
   sheet = "meta_data") |>
   dplyr::filter(
     var_name != "note0" & var_name != "note2" & var_name != "notes"
@@ -189,17 +189,17 @@ meta_data$question_type[meta_data$var_name %in% c("id","index","status","submiss
 # add the directory names
 xlsx::write.xlsx(
   meta_data,
-  file = "/spellbook/meta_data.xlsx"
+  file = "/scripts/meta_data.xlsx"
 )
 
 saveRDS(
   meta_data,
-  file = "/spellbook/meta_data.rds"
+  file = "/scripts/meta_data.rds"
 )
 
 saveRDS(
   dataset,
-  "/undead_army/dataset.rds"
+  "/clean_data/dataset.rds"
 )
 rm(dataset)
 

@@ -11,7 +11,7 @@ value_codes_file = readxl::read_excel(
 
 # create file to store the value labels
 file.create(
-  "/skeletons/value_labels.R"
+  "/meta_files/value_labels.R"
 )
 
 
@@ -39,7 +39,7 @@ towrite = paste0(names," = c(\n", paste0(split_data$stem,collapse = ',\n'),"\n)\
 
 readr::write_lines(
   towrite,
-  file = "/skeletons/value_labels.R",
+  file = "/meta_files/value_labels.R",
   append = T
 )
 
@@ -47,7 +47,7 @@ readr::write_lines(
 
 
 # read in the value labels
-source("/skeletons/value_labels.R")
+source("/meta_files/value_labels.R")
 
 
 # remove some junk

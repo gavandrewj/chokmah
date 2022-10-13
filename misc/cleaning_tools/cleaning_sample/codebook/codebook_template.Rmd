@@ -51,9 +51,9 @@ knitr::opts_chunk$set(echo = F,warning = F,message = F)
 				\fontsize{50pt}{80pt}\selectfont % Title font size, the first argument is the font size and the second is the line spacing, adjust depending on title length
 				\vspace{0.7cm} % Space between the start of the title and the top of the grey box
 				
-				Study Title\\
-				and\\
-				Information\\
+				Sickle Cell\\
+				Research\\
+				Project\\
 			 \vspace{4cm}
 			
 				Codebook for dataset\\
@@ -72,10 +72,9 @@ knitr::opts_chunk$set(echo = F,warning = F,message = F)
 	\parbox[t]{0.93\textwidth}{ % Box to inset this section slightly
 		\raggedleft % Right align the text
 		\Large % Increase the font size
-		{\Large B.J. Blazkowicz}\\[4pt] % Extra space after name
+		{\Large Dr. Kenisha Hutson}\\[4pt] % Extra space after name
 		Department Name\\
 		Institution Name\\[4pt] % Extra space before URL
-		\texttt{LaTeXTemplates.com}\\
 		
 		\hfill\rule{0.2\linewidth}{1pt}% Horizontal line, first argument width, second thickness
 	}
@@ -113,17 +112,15 @@ knit_function = function(knit_object){
 }
 
 
-dataset = readRDS("C:/Users/gavin/Documents/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
-meta_path = "C:/Users/gavin/Documents/R/sadp2022/clean_main_data/meta_files/meta_data.rds"
+
 
 # define exactly where the meta file is located 
-# meta_path = "../meta_files/meta_data.rds"
+meta_path = "C:/Users/gavin/Documents/R/kennySicCell/sickle_cell_data/meta_files/meta_data.rds"
 
 
 # global options 
 options(huxtable.bookdown = T)
 options(knitr.duplicate.label = "allow")
-options(scipen=999)
 
 ```
 
@@ -133,23 +130,15 @@ options(scipen=999)
 
 # read the meta file data in 
 meta_data <- readRDS(meta_path) |>
-  dplyr::select(-starts_with("NA")) |> tibble::as_tibble() |>
+  dplyr::select(-starts_with("NA")) |> 
   dplyr::filter(
-    question_type == "select_one" |
-     question_type == "indicator" |
-      question_type == "text" |
-        question_type == "calculate" |
-        question_type == "integer" |
-       question_type == "decimal" |
-     var_name == "today"
+    question_type != "select_multiple"
   )
 
 
 # read in the datafile
-# dataset = readRDS("~/R/sadp2022/clean_main_data/cleaned_datafiles/dataset.rds")
+dataset = readRDS("C:/Users/gavin/Documents/R/kennySicCell/sickle_cell_data/cleaned_datafiles/dataset.rds")
 
-# meta_data$suppress_valtab[which(meta_data$var_name == "lcost_pos")] = T
-# meta_data$suppress_valtab[which(meta_data$var_name == "q4_24a")] = T
 
 ```
 
@@ -161,112 +150,21 @@ meta_data <- readRDS(meta_path) |>
 
 \newgeometry{left=2.5cm, right=2cm,bottom = 3cm}
 
-```{r results='asis',eval=T}
-# this is for the first wave of variables
-
-  
-print_toc_table = function(variable_names,variable_labels){
-# generate the mini table of contents for this set of variables 
-page_numbers = c()
-
-for(name in variable_names){
-  page_numbers = c(paste0("\\pageref{",name,"} \n"),page_numbers)
-}
-
-toc_code = data.frame(
-  variable_name = variable_names,
-  variable_label = variable_labels,
-  pages = rev(page_numbers)
-) |>
-  dplyr::rename(
-  "Variable"  = variable_name,
-  "Variable Label" = variable_label,
-  "Page" = pages
-  ) |> 
-  huxtable() |>
-  huxtable::theme_grey() |> 
-  set_width(0.9) |>
-  set_col_width(c(0.15,0.75,0.1)) |> 
-  set_top_padding(row = 2:length(variable_names),col = 1:3, value = 2) |> 
-  set_bottom_padding(row = 2:length(variable_names),col = 1:3, value = 2) |>
-  set_font_size(10) |> 
-  to_latex(tabular_only = T) 
-
-
-
-
-toc_code = gsub(pattern = '$\\backslash$pageref\\',replacement = '\\pageref',toc_code,fixed = T)
-
-
-for(name in variable_names){
-
-tofind = paste0("\\pageref{",gsub(pattern = "\n",replacement = "",commonmark::markdown_latex(name)),"\\}  \\newline")
-toc_code = gsub(pattern = tofind,replacement = paste0("\\pageref{",name,"}"),toc_code,fixed = T)
-    
-}
-# \\pageref{var2\\}  \\newline
-# first_final = stringr::str_split(toc_code,pattern = "\n") |> unlist()
-# toc_code = paste0(first_final,collapse = "\n")
-toc_code |> cat()
-}
-
-
-
-```
-
-
-```{r results='asis'}
-print_toc_table(
-variable_names = meta_data$var_name[1:32],
-variable_labels = meta_data$var_label[1:32]
-)
-
-```
-
-
-
 ```{r results='asis'}
 
-print_toc_table(
-variable_names = meta_data$var_name[33:65],
-variable_labels = meta_data$var_label[33:65]
-)
-
-
-```
-
-```{r results='asis'}
-
-print_toc_table(
-variable_names = meta_data$var_name[66:98],
-variable_labels = meta_data$var_label[66:98]
-)
-
-
-```
-
-```{r results='asis'}
-
-print_toc_table(
-variable_names = meta_data$var_name[99:129],
-variable_labels = meta_data$var_label[99:129]
-)
-
-
-```
-
-```{r results='asis'}
-
-print_toc_table(
-variable_names = meta_data$var_name[130:162],
-variable_labels = meta_data$var_label[130:162]
+chokmah::codebook_toc(
+  names = meta_data$var_name,
+  labels = meta_data$var_label,
+  up_count = 18,
+  add_count = 1,
+  want_iter = 1
 )
 
 
 ```
 
 \restoregeometry
-\setlength{\footskip}{-1cm}
+\setlength{\footskip}{-1pt}
 
 \newpage
 
@@ -274,15 +172,14 @@ variable_labels = meta_data$var_label[130:162]
 ```{r}
 
 # generate the info for the first wave of variables
-test_vars = c("q001","q002a","q0_0","q0_5a","q0_12_7","cnum","q4_30_2","q4_33","today")
 
-# dataset = rbind(dataset,rep(NA,38))
-# dataset = rbind(dataset,rep(NA,38))
-# dataset = rbind(dataset,rep(NA,38))
-# dataset = rbind(dataset,rep(NA,38))
+variable_names = meta_data |> 
+  dplyr::filter(
+    # var_name != "q10a"
+  ) |> 
+  dplyr::pull(var_name)
 
-variable_names = meta_data$var_name[1:20]
-# variable_names = "q002a"
+# variable_names = variable_names[19]
 
 list_to_knit = lapply(
   variable_names,
@@ -296,5 +193,4 @@ list_to_knit = lapply(
 ```
 
 `r unlist(lapply(list_to_knit,knit_function))`
-
 

@@ -99,7 +99,7 @@ library(gt)
 # library(gtExtras)
 library(huxtable)
 library(readxl)
-
+library(furrr)
 
 header_beam = function(varname){
 cat("\\colorbox{mypink1}{\\makebox[\\textwidth]{\\strut\\bfseries\\color{black} ",varname,"}}")
@@ -108,6 +108,18 @@ cat("\\colorbox{mypink1}{\\makebox[\\textwidth]{\\strut\\bfseries\\color{black} 
 '%!in%' <- function(x,y)!('%in%'(x,y))
 
 knit_function = function(knit_object){
+  meta_path = "C:/Users/gavin/Documents/R/kennySicCell/sickle_cell_data/meta_files/meta_data.rds"
+  
+  meta_data <- readRDS(meta_path) |>
+  dplyr::select(-starts_with("NA")) |> 
+  dplyr::filter(
+    question_type != "select_multiple"
+  )
+  
+  header_beam = function(varname){
+cat("\\colorbox{mypink1}{\\makebox[\\textwidth]{\\strut\\bfseries\\color{black} ",varname,"}}")
+}
+  
   paste(knitr::knit(text = knit_object), collapse = '\n')
 }
 
@@ -121,6 +133,11 @@ meta_path = "C:/Users/gavin/Documents/R/kennySicCell/sickle_cell_data/meta_files
 # global options 
 options(huxtable.bookdown = T)
 options(knitr.duplicate.label = "allow")
+
+plan(
+  multisession,
+  workers = 4
+)
 
 ```
 
@@ -179,7 +196,7 @@ variable_names = meta_data |>
   ) |> 
   dplyr::pull(var_name)
 
-# variable_names = variable_names[19]
+variable_names = variable_names[1]
 
 list_to_knit = lapply(
   variable_names,
@@ -188,9 +205,11 @@ list_to_knit = lapply(
   dataset = dataset
 )
 
-
+# `r unlist(lapply(list_to_knit,knit_function))`
 
 ```
 
-`r unlist(lapply(list_to_knit,knit_function))`
 
+
+
+`r unlist(future_map(.x = list_to_knit,.f =  knit_function,.progress = T,.options =  furrr_options(seed = T)))`

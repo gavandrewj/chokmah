@@ -44,7 +44,7 @@ gen_skeleton = function(dataset,skeleton_path,store_data_path){
 
         "
 
-    ##########  ",var_label,"
+    ##########  ",var_label," ####################################################
 
   ",
   var_conditional,"
@@ -90,7 +90,7 @@ chokmah::clean_discrete(",dataset,"[['",var_name,"']]) \n\n\n"
 
         "
 
-    ##########  ",var_label,"
+    ##########  ",var_label," ####################################################
 
   ",
   var_conditional,"
@@ -132,7 +132,7 @@ chokmah::clean_discrete(",dataset,"[['",var_name,"']]) \n\n\n"
 
         "
 
-    ##########  ",var_label,"
+    ##########  ",var_label," ####################################################
 
   ",
   var_conditional,"
@@ -140,7 +140,9 @@ chokmah::clean_discrete(",dataset,"[['",var_name,"']]) \n\n\n"
   ",
   var_cleaning,"
 
-chokmah::clean_discrete(",dataset,"[['",var_name,"']])
+
+
+chokmah::clean_discrete(as.character(",dataset,"[['",var_name,"']]))
 
 ",dataset," = ",dataset," |>
 
@@ -150,7 +152,7 @@ chokmah::clean_discrete(",dataset,"[['",var_name,"']])
                      label = '",var_label,"'
                   ))
 
-chokmah::clean_discrete(",dataset,"[['",var_name,"']]) \n\n\n"
+chokmah::clean_discrete(as.character(",dataset,"[['",var_name,"']])) \n\n\n"
       )
 
 
@@ -170,7 +172,7 @@ chokmah::clean_discrete(",dataset,"[['",var_name,"']]) \n\n\n"
 
         "
 
-    ##########  ",var_label,"
+    ##########  ",var_label," ####################################################
 
   ",
   var_conditional,"
@@ -216,7 +218,7 @@ chokmah::clean_continuous(",dataset,"[['",var_name,"']]) \n\n\n"
 
         "
 
-    ##########  ",var_label,"
+    ##########  ",var_label," ####################################################
 
   ",
   var_conditional,"

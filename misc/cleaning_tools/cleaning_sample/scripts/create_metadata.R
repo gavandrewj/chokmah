@@ -106,10 +106,23 @@ saveRDS(
 
 
 
+# run value label scripts
+source("clean_main_data/main_files/cleaning_template.R")
+
+source("clean_main_data/meta_files/create_value_labels.R")
+
+
+
+##### Main Dataset Meta Info #####################################################
+
+# read in the roster meta data
+instrument_metadata <- readxl::read_excel(
+  "clean_main_data/meta_files/instrument_metadata.xlsx",
+  sheet = "meta_data"
+)
+
 meta_data = data.frame(
-  var_name = dataset |>
-    janitor::clean_names() |>
-    names(),
+  var_name = instrument_metadata$var_name,
   question_type = "",
   value_label = "",
   var_conditional = "",
@@ -123,36 +136,29 @@ meta_data = data.frame(
   invalid_codes = "",
   new_page = F,
   table_break = NA,
-  var_special = NA
+  suppress_valtab = FALSE
 )
 
-for(names in basic_meta$var_name){
 
-meta_data$question_type[which(meta_data$var_name == names)] = basic_meta$question_type[which(basic_meta$var_name == names)]
-meta_data$value_label[which(meta_data$var_name == names)] = basic_meta$value_label[which(basic_meta$var_name == names)]
-meta_data$var_label[which(meta_data$var_name == names)] = basic_meta$var_label[which(basic_meta$var_name == names)]
-
-}
-
-
-rm(basic_meta)
-
-instrument_metadata <- readxl::read_excel(
-  "/scripts/instrument_metadata.xlsx",
-  sheet = "meta_data") |>
-  dplyr::filter(
-    var_name != "note0" & var_name != "note2" & var_name != "notes"
-  )
+# read in the roster meta data
+# instrument_metadata <- readxl::read_excel(
+#   "clean_main_data/meta_files/instrument_metadata.xlsx",
+#   sheet = "meta_data"
+# )
 
 meta_data = meta_data |>
   dplyr::mutate(
-    var_label = instrument_metadata$variable_label,
+    var_label = instrument_metadata$var_label,
     question_type = instrument_metadata$question_type,
     value_label = instrument_metadata$value_label,
     var_conditional = instrument_metadata$var_conditional,
     var_cleaning = instrument_metadata$var_cleaning,
     recode = instrument_metadata$recode,
-    possible_invalid_codes = instrument_metadata$possible_invalid_codes
+    possible_invalid_codes = instrument_metadata$possible_invalid_codes,
+    suppress_valtab = instrument_metadata$suppress_valtab,
+    new_page = instrument_metadata$new_page,
+    brief_desc = instrument_metadata$brief_desc,
+    time_zone = instrument_metadata$time_zone
   )
 
 rm(instrument_metadata)
@@ -166,7 +172,12 @@ meta_data = meta_data |>
     interval_type = ifelse(question_type == "select_one" | question_type == "indicator","discrete",interval_type),
     interval_type = ifelse(question_type == "integer" | question_type == "decimal" | question_type == "calculate","continuous",interval_type),
     var_type = ifelse(question_type == "date","character",var_type),
-    possible_invalid_codes = ifelse(is.na(possible_invalid_codes),"-3,-99,-1,-2",possible_invalid_codes)
+    new_page = ifelse(is.na(new_page),F,new_page),
+    recode = ifelse(is.na(recode),F,recode),
+    possible_invalid_codes = ifelse(is.na(possible_invalid_codes),"Not Applicable,Missing,-99,-3,-2,-1",possible_invalid_codes),
+    suppress_valtab = ifelse(is.na(suppress_valtab),F,suppress_valtab),
+    brief_desc = ifelse(is.na(brief_desc),"",brief_desc)
+
 
 
 
@@ -174,33 +185,31 @@ meta_data = meta_data |>
   ) |>
   dplyr::filter(
     # question_type == "select_one" | question_type == "indicator" | question_type == "text" |
-      # question_type == "integer" | question_type == "decimal"
-     # question_type != "select_multiple"
+    # question_type == "integer" | question_type == "decimal"
+    # question_type != "select_multiple"
   )
 
 
-
+# index is selected out here
 meta_data$question_type[stringr::str_detect(meta_data$var_name,pattern = "gps")] = "gps"
 meta_data$question_type[meta_data$var_name %in% c("id","index","status","submission_time","submitted_by","tags","uuid","validation_status")] = "misc"
 
 
-
-
-# add the directory names
 xlsx::write.xlsx(
   meta_data,
-  file = "/scripts/meta_data.xlsx"
+  file = "clean_main_data/meta_files/meta_data.xlsx"
 )
 
 saveRDS(
   meta_data,
-  file = "/scripts/meta_data.rds"
+  file = "clean_main_data/meta_files/meta_data.rds"
 )
 
 saveRDS(
   dataset,
-  "/clean_data/dataset.rds"
+  "clean_main_data/cleaned_datafiles/dataset.rds"
 )
+
 rm(dataset)
 
 
